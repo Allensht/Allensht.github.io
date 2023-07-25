@@ -3,7 +3,7 @@
 - 🌱 I’m currently learning java
 - 💞️ I’m looking to collaborate on WeChat
 - 📫 How to reach me   
-My WeChat:Eternity---Future
+My E-mail:swhatw442@qq.com
 
 <!---
 Allensht/Allensht is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
