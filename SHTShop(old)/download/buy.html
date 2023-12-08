@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>SHTShop | 下载页</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <script src="js/google_ga3.js"></script>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/6506faf4b1aaa13b7a77530c/1hahk8j2e';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+    <style type="text/css">
+        * {
+          margin:0;
+          padding:0;
+          font-family: "PingFang SC","Microsoft Yahei","Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB",  sans-serif;
+        }
+        html {
+            height: 100%;
+        }
+        body {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #323131;
+        }
+        .dwn-main {
+            /*background-image: url(images/dot.png);*/
+            overflow: hidden;
+            width: 100rem;
+            height: 55rem;
+            position: relative;
+        }
+        .dwn-download-center {
+            transition: opacity .5s;
+            -webkit-transition: opacity .5s;
+            -moz-transition: opacity .5s;
+        }
+        .dwn-dot {
+            position: absolute;
+            top: 6rem;
+            width: 100%;
+            height: 23rem;
+           /* background: url(images/dot-light.png) repeat;*/
+        }
+        .dwn-body {
+            position: relative;
+            height: 35rem;
+            top: 5rem;
+            width: 100%;
+        }
+        .dwn-body-diamond {
+            z-index: 5;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .dwn-diamond-qr {
+            transform: rotateY(-130deg);
+            -ms-transform: rotateY(-130deg);
+            -moz-transform: rotateY(-130deg);
+            display: table;
+            background: url(images/dwn-shu.png) no-repeat center ;
+        transition: transform .8s;
+        -webkit-transition: transform  .8s;
+        -ms-transition: transform  .8s;
+        -monz-transition: transform .8s;
+        margin: 0 auto ;
+        background-size: contain ;
+        height: 100%;
+        width:17rem;
+        }
+        .opacity0 {
+            opacity: 0 !important;
+        }
+        .dwn-diamond-qr.qr-normal {
+            opacity: 1;
+            transform: rotateY(0deg);
+            -ms-transform: rotateY(0deg);
+            -moz-transform: rotateY(0deg);
+        }
+        .dwn-diamond-center {
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .dwn-diamond-code {
+            height: 10rem;
+            background: url(images/buy.png) no-repeat center ;
+            background-size: contain ;
+            margin-bottom: 1rem;
+        }
+        .dwn-body-cartoon {
+            overflow: visible;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            position: absolute;
+            z-index: 3;
+        }
+        .dwn-body-cartoon .cartoon-left {
+            float: left;
+            width: 50%;
+            overflow: hidden;
+            position: relative;
+            text-align: right;
+        }
+        .dwn-body-cartoon .cartoon-right {
+            float: right;
+            overflow: hidden;
+            position: relative;
+            width: 50%;
+        }
+        .dwn-body-cartoon .cartoon-left .cartoon-figure {
+            margin-right: 4rem;
+            left: -100%;
+        }
+        .dwn-body-cartoon .cartoon-right .cartoon-figure {
+            left: 100%;
+        }
+        .dwn-body-cartoon .cartoon-figure {
+            position: relative;
+            height: 45rem;
+            /* transition: all 1s ease-in-out;
+             -webkit-transition: all 1s ease-in-out;
+             -moz-transition: all 1s ease-in-out;
+             transform: translateX(0);*/
+        }
+        .cartoon-start .cartoon-ball {
+            opacity: 0;
+        }
+        .cartoon-ball {
+            transition: opacity 1s;
+            -moz-transition: opacity 1s;
+            -webkit-transition: opacity 1s;
+            display: block;
+            position: absolute;
+            opacity: 1;
+        }
+        .cartoon-ball.ball1 {
+            right: 28rem;
+            bottom: 18rem;
+        }
+        .cartoon-ball.ball2 {
+            right: 21rem;
+            bottom: 28rem;
+        }
+        .cartoon-ball.ball3 {
+            right: 24rem;
+            bottom: 28rem;
+        }
+        .cartoon-ball.ball4 {
+            right: 29rem;
+            bottom: 16rem;
+        }
+        .cartoon-ball.ball5 {
+            right: 14rem;
+            bottom: 19rem;
+        }
+        .cartoon-ball.ball6 {
+            right: 14rem;
+            bottom: 19rem;
+        }
+        .cartoon-ball.ball7 {
+            right: 13rem;
+            bottom: 35rem;
+        }
+        .cartoon-ball.ball8 {
+            right: 24rem;
+            bottom: 35rem;
+        }
+        .dwn-body-line {
+            bottom: 0;
+            width: 100%;
+            position: absolute;
+        }
+        .dwn-body-line img {
+            transition: opacity .3s;
+            width: 40%;
+            position: absolute;
+        }
+        .dwn-body-line .line-left {
+            top: -4.5rem;
+            left: -1rem;
+            width: 45%;
+        }
+        .dwn-body-line .line-right {
+            top: -4.5rem;
+            right: -1rem;
+            width: 45%;
+        }
+        .dwn-body .dwn-ybg {
+            width: 100%;
+        }
+        .dwn-dm-top{
+            z-index: 3;
+            top: 0;
+            position: absolute;
+        }
+        .dwn-dm-bottom{
+            bottom: 0;
+             position: fixed;
+        }
+        .dwn-dm-top, .dwn-dm-bottom {
+            overflow: hidden;
+            width: 100%;
+            height: 14rem;
+            box-sizing: border-box;
+        /*    padding: 1.5rem 0;*/
+        }
+        .dan-m-span {
+            transition: right 30ms;
+            font-weight: bold;
+            color: white;
+            position: absolute;
+            word-wrap: break-word;
+            white-space: nowrap;
+        }
+        .buy {
+            display: block;
+            margin: 15px auto;
+            background: #eb94d0;
+            /* 创建渐变 */
+            background-image: -webkit-linear-gradient(top, #eb94d0, #2079b0);
+            background-image: -moz-linear-gradient(top, #eb94d0, #2079b0);
+            background-image: -ms-linear-gradient(top, #eb94d0, #2079b0);
+            background-image: -o-linear-gradient(top, #eb94d0, #2079b0);
+            background-image: linear-gradient(to bottom, #eb94d0, #2079b0);
+            /* 给按钮添加圆角 */
+            -webkit-border-radius: 28;
+            -moz-border-radius: 28;
+            border-radius: 28px;
+            text-shadow: 3px 2px 1px #9daef5;
+            -webkit-box-shadow: 6px 5px 24px #666666;
+            -moz-box-shadow: 6px 5px 24px #666666;
+            box-shadow: 6px 5px 24px #666666;
+            font-family: Arial;
+            color: #fafafa;
+            font-size: 15px;
+            padding: 5px;
+            text-decoration: none;
+        }
+        /* 悬停样式 */
+        .buy:hover {
+            background: #2079b0;
+            background-image: -webkit-linear-gradient(top, #2079b0, #eb94d0);
+            background-image: -moz-linear-gradient(top, #2079b0, #eb94d0);
+            background-image: -ms-linear-gradient(top, #2079b0, #eb94d0);
+            background-image: -o-linear-gradient(top, #2079b0, #eb94d0);
+            background-image: linear-gradient(to bottom, #2079b0, #eb94d0);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<div class="dwn-main">
+    <div class="dwn-dm-top" id="dwn-dm-top">
+    </div>
+    <div class="dwn-body">
+        <div class="dwn-download-center  opacity0" style="height: 100%; width: 100%;">
+            <svg width="100%" height="100%" version="1.1" viewBox="0 0 160 56" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="0,0 80,10 160,0 160,56 80,46 0,56" style="fill:rgba(255, 221, 87, 0.86);"></polygon>
+            </svg>
+              <div class="dwn-center-dot dwn-dot"></div>
+        </div>
+        <div class="dwn-body-diamond">
+            <div class="dwn-diamond-qr opacity0">
+                <div class="dwn-diamond-center">
+                    <div class="dwn-diamond-code" style="width: 300px; height: 400px;"></div>
+
+                    <a href="index.html" style="text-decoration: none;">
+                        <button class="buy">返回支付页</button>
+                    </a>
+                    <a href="/" style="text-decoration: none;">
+                        <button class="buy">返回首页</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="dwn-body-line">
+            <img src="picture/dwn-line-left.png" class="line-left opacity0"/>
+            <img src="picture/dwn-line-right.png" class="line-right opacity0"/>
+        </div>
+    </div>
+    <div class="dwn-dm-bottom" id="dwn-dm-bottom">
+    </div>
+</div>
+<script type="text/javascript">
+var tanm = ["请务必备注好需要购买商品的商品编号","感谢您使用本站","推荐使用微信支付","666666","欢迎下次再来","你好","免责声明：",
+"本资源仅限用于学习和研究目的；不得将上述内容用于商业或者非法用途，否则，一切后果请用户自负。您必须在下载后的24个小时之内，从您的电脑中彻底删除上述内容。如果您喜欢该程序，请支持正版软件，购买注册，得到更好的正版服务。",
+"附: 二〇〇二年一月一日《计算机软件保护条例》第十七条规定：为了学习和研究软件内含的设计思想和原理，通过安装、显示、传输或者存储软件等方式使用软件的，可以不经软件著作权人许可，不向其支付报酬！",
+"如有侵权请第一时间联系邮箱：allensht@outlook.com 我们将配合处理！",
+"由于本站资源收集于网络，开发也是使用开源模板，故无法核实资源侵权的真实性，无论出于何种目的要求本站删除内容，“您”均需要提供相关证明，否则不予处理。",
+"【下载前必看 不看后果自负】",
+"用户使用条款：",
+"1.本人仅供分享，不负责商业化",
+"2.任何商业化行为与本人无关",
+"3.本站资源只提供参考学习使用，非任何盈利目的，部分资源需要付费旨在为了维持本站运营，也欢迎赞助我们，感谢支持",
+"4.请下载后于24小时内务必删除！谨记！",
+"5.本站所有资源均来源于网络收集，一切版权归原作者所有，请保留原版权信息。",
+"6.排除在某个功能上存在有其它的BUG或源码残缺的可能，购买后一律不能退款。",
+"7.文件储存在网盘，如发现链接或者密码有误，请联系我们。",
+"8.如果付款后下载不了，请提交工单说明，我们会及时解决，如果解决不了，会为您退款。",
+'9.本站收集的资源都不包含技术服务请大家谅解！',
+"10.本站收集的资源仅供下载者学习交流，请遵守国家法律法规，严禁用于非法用途。",,
+"全部资源来自互联网收集",
+"任何人不得用于倒卖、行骗、传播，仅供用于学习和交流,禁止商用，如需商用，请从正规渠道选择购买正版！使用正版！支持正版！维护一个良好的知识产权环境。",
+"请遵循相关法律法规，一切资源不代表本人立场",
+"如有侵权请第一时间联系我们",
+"我们会第一时间整顿清理删除！",
+"使用过程中出现的任何问题均与本站无关。"];
+    (function f(win, doc) {
+        var danmArrayTop = [];//15个 同时
+        var danmArrayBottom = [];//15个 同时
+        var danmMoveDuration = 30;
+        var movPx = 3;
+        var startPosition = Math.ceil(Math.random() * 100);
+        var topContainer = null;
+        var bottomContainer = null;
+        var createDanmDuration = 0;
+        $(document).ready(function () {
+            calculateRemPx();
+            initPage();
+            initDanm();
+            initCartoon();
+        });
+        win.onload = function () {
+            let diffWidth = $(document).width() - $(win).width();
+            if (diffWidth > 0) {
+                setTimeout(function () {
+                    win.scrollTo && win.scrollTo(diffWidth / 2, 0);
+                }, 0);
+            }
+        };
+        function danm(el, speed, p) {
+            this.el = el;
+            this.position = p;
+            this.speed = speed;
+            this.width = -p;
+            this.state = "run";
+        }
+        danm.prototype.delete = function () {
+            this.state = "delete";
+            $(this.el).remove();
+        };
+        function initDanm() {
+            topContainer = $("#dwn-dm-top");
+            bottomContainer = $("#dwn-dm-bottom");
+            setInterval(moveDanm, danmMoveDuration);
+        }
+        function moveDM(b) {
+            var docWidth = $(doc).width();
+            if (b.position > (docWidth + b.width)) {
+                b.delete();
+            }
+            else if (b.state === 'run') {
+                b.position = b.position + b.speed;
+                b.el.style.right = b.position + "px";
+            }
+        }
+        function moveDanm() {
+            if(createDanmDuration>=3600){
+                createDanm();
+                createDanmDuration=0;
+            }
+             createDanmDuration+=danmMoveDuration;
+            danmArrayBottom.forEach(moveDM);
+            danmArrayTop.forEach(moveDM);
+        }
+        var top = 0.5;
+        var fontSizeArr = [1.8, 2.2, 2.5];
+        var tfsize = null;
+        var bfsize = null;
+        function createDanm() {
+            danmArrayTop = danmArrayTop.filter(function (b) {
+                return b.state === "run"
+            });
+            danmArrayBottom = danmArrayBottom.filter(function (b) {
+                return b.state === "run"
+            });
+            var topDm = createDmElement(tfsize, top, topContainer);
+            var t = topDm.el;
+            danmArrayTop.push(new danm(t, movPx, -topDm.width));
+            var bottomDm = createDmElement(bfsize, top, bottomContainer);
+            var b = bottomDm.el;
+            danmArrayBottom.push(new danm(b, movPx, -bottomDm.width));
+            top += 4;
+            top = top > 12 ? .5 : top;
+        }
+        function createDmElement(fsize, top, container) {
+            var t = document.createElement('span');
+            t.className = "dan-m-span";
+            t.textContent = tanm[startPosition];
+            startPosition += 1;
+            startPosition %= tanm.length;//100;
+            t.style.display = "none";
+            var tsize = 0;
+            if (t.textContent.length < 20) {
+                tsize = Math.floor((Math.random() * 10) % 3);
+            }
+            if (fsize === 2 && tsize === 2) {
+                tsize = 0;
+            }
+            t.style.fontSize = fontSizeArr[tsize] + 'rem';
+            t.style.top = top + 'rem';
+            container.append(t);
+            var twidth = $(t).width();
+            // var bwidth = $(b).width();
+            t.style.right = -twidth + "px";
+            // b.style.right = -bwidth + "px";
+            t.style.display = "block";
+            return {
+                el:t,
+                size: tsize,
+                width:twidth,
+                txtLength: t.textContent.length
+            }
+        }
+        function initPage() {
+            setTimeout(function () {
+                $(".dwn-download-center").removeClass("opacity0");
+            }, 200);
+            setTimeout(function () {
+                $(".dwn-body-line .line-left").removeClass("opacity0");
+            }, 500);
+            setTimeout(function () {
+                $(".dwn-body-line .line-right").removeClass("opacity0");
+            }, 600);
+            setTimeout(function () {
+                $(".dwn-diamond-qr").removeClass("opacity0").addClass("qr-normal");
+            }, 800);
+            var resizeCancel = null;
+            $(window).resize(function () {
+                clearTimeout(resizeCancel);
+                resizeCancel = setTimeout(function () {
+                    calculateRemPx();
+                }, 300)
+            })
+        }
+        function initCartoon() {
+            setTimeout(function () {
+                $(".cartoon-start .cartoon-left .cartoon-figure").animate({"left": "20px"}, "normal", "swing", function () {
+                    $(".cartoon-start").removeClass("cartoon-start")
+                }).animate({left:0});
+                $(".cartoon-start .cartoon-right .cartoon-figure").animate({"left": "-20px"}, "normal", "swing", function () {
+                    $(".cartoon-start").removeClass("cartoon-start")
+                }).animate({left:0});
+            }, 1200);
+        }
+        function calculateRemPx() {
+            var width = $(win).width();
+            var height = $(win).height();
+            if (width < 1000) {
+                $(document.documentElement).css("font-size", "12px");
+                return;
+            }
+            var ratio = width / height;
+            var fontSize = 16;
+            if (ratio >= 1.8) { // 以宽度为准
+                fontSize = width / 100
+            }
+            else { //以高度为准
+                fontSize = height / 55
+            }
+            $(document.documentElement).css("font-size",  fontSize + "px");
+        }
+    })(window, document);
+</script>
+<script type="text/javascript"  src="js/su.js"></script>
+</body>
+</html>

@@ -1,0 +1,749 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>CMD找不到Python?</title>
+    <url>/SHTBlog/e36b/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a><em><strong>前言</strong></em></h2><blockquote>
+<p>当我们费完一牛一虎之力给我们的Windows装上python后，却发现在CMD中输入python时发生这样一幕🤔</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">&gt;D:\&gt;python</span><br><span class="line">&gt;<span class="string">&#x27;python&#x27;</span> 不是内部或外部命令，也不是可运行的程序或批处理文件。</span><br></pre></td></tr></table></figure></div>
+<p>那么这就需要来Look一下这篇文章了🫡</p>
+</blockquote>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a><em><strong>正文</strong></em></h2><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>导致这种问题的原因可能是没有将python添加到path环境变量中，导致CMD无法找到python</p>
+<h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><p>既然python环境没有添加到系统变量中，那就把它加到环境变量中</p>
+<ul>
+<li><p>右击计算机图标 -&gt; 点击属性 -&gt; 点击高级系统设置 -&gt; 点击环境变量</p>
+</li>
+<li><p>分别在用户变量和系统变量中找到path环境变量,点击编辑,并将你的python安装路径添加到里面</p>
+<p>比如你的python安装在<code>D:\Program Files\python\</code></p>
+<p>那就将此路径完整的添加到环境变量当中</p>
+<p>更改完记得点确定😂</p>
+</li>
+</ul>
+<h3 id="检验成果"><a href="#检验成果" class="headerlink" title="检验成果"></a>检验成果</h3><p>  <strong>重新启动</strong>CMD,再次输入python，出现以下内容则代表你成功得将python环境装好了👀</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">D:\&gt;python</span><br><span class="line">Python 3.11.5 (tags/v3.11.5:cce6ba9, Aug 24 2023, 14:38:34) [MSC v.1936 64 bit (AMD64)] on win32</span><br><span class="line">Type <span class="string">&quot;help&quot;</span>, <span class="string">&quot;copyright&quot;</span>, <span class="string">&quot;credits&quot;</span> or <span class="string">&quot;license&quot;</span> <span class="keyword">for</span> more information.</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>出现这个问题就是因为环境变量没有配置好，在运行python安装程序时会有一个选项<strong>将python添加到path环境变量</strong>，只要那时勾选了，就不用现在自己手动配置了!</p>
+<h2 id="That’s-all-Thank-you-for-reading"><a href="#That’s-all-Thank-you-for-reading" class="headerlink" title="That’s all.Thank you for reading!"></a>That’s all.Thank you for reading!</h2><h2 id="CSDN已同步发布，点击查看"><a href="#CSDN已同步发布，点击查看" class="headerlink" title="CSDN已同步发布，点击查看"></a><a class="link"   href="https://blog.csdn.net/2202_75780138/article/details/132795278" >CSDN已同步发布，点击查看 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h2><h2 id="掘金已同步发布，点击查看"><a href="#掘金已同步发布，点击查看" class="headerlink" title="掘金已同步发布，点击查看"></a><a class="link"   href="https://juejin.cn/post/7276716177120755773" >掘金已同步发布，点击查看 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h2>]]></content>
+      <categories>
+        <category>windows</category>
+        <category>cmd</category>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>windows</tag>
+        <tag>cmd</tag>
+        <tag>cmd-python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SHTShop！假期三天自己做了一个源码商城</title>
+    <url>/SHTBlog/dc68/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
+<p>十天假期无聊？那就搞个项目玩玩，左思右想，看到网上很多源码商城项目不错，还可以赚点零花钱🤔于是乎，突发奇想，既然网上的那些平台资源大多都是从互联网上爬的，很有可能存在版权问题，违法的事情咱肯定不能做，所以SHTShop源码商城郑重承诺：</p>
+<p>本站所有资源全部经过原作者许可，或是可商用开源项目，又或是博主自己写的项目，所以各位可以放心来到小站光顾一下，并且商品都是良心价哦，拿去练手绝对没问题😁</p>
+<p><a href="https://allensht.github.io/SHTShop/">SHTShop源码商城</a>是个人开发者Allensht运营的资源分享站，于2023年9月23日正式上线，主要分享技术性资源，目的旨在方便大家学习交流，提升效率，不断进步</p>
+</blockquote>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://pic.imgdb.cn/item/651929b6c458853aefa19c08.jpg"
+                      alt="加载失败，请及时联系我处理！"
+                ></p>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h2><p>这个项目是和几个朋友一起做的，资金也比较充裕，所以最初是想下点血本买个服务器，买个域名，买个WordPress主题来完成这个项目的。结果经过前期不断调研，发现服务器、域名之类的弄起来也挺麻烦的，要各种配置，国内的话还要备案，国外的话访问速度肯定受影响。其实最是商品的收费功能怎么做？一来一去时间浪费很多，所以<strong>节省成本，取其精华</strong>🧐</p>
+<ul>
+<li>使用GitHub Pages来托管项目</li>
+<li>域名后期再买</li>
+<li>使用Hexo博客框架以文章的形式发布商品</li>
+<li>支付页面自己写，采用先付款，再审核，后发货的形式，虽然有点慢，但是<strong>节省成本</strong></li>
+<li>使用tawk.to作为客服系统，因为<strong>免费且可用</strong></li>
+</ul>
+<h2 id="建站过程"><a href="#建站过程" class="headerlink" title="建站过程"></a>建站过程</h2><p>之前就用Github Pages托管了<a href="https://allensht.github.io/SHTBlog/">个人博客</a>，所以避免文件太多导致冲突问题，采取同一个仓库下一个目录一个项目的形式来协调各个项目之间正常工作<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://pic.imgdb.cn/item/65191be5c458853aef9d8e92.jpg"
+                      alt="加载失败，请及时联系我处理！"
+                ></p>
+<p>Hexo的话选择的是Butterfly主题，这个主题作者精心维护很长时间了，网上的各种教程也很多，所以出问题也可以快速找到解决办法的<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://pic.imgdb.cn/item/65191cc3c458853aef9db17f.jpg"
+                      alt="加载失败，请及时联系我处理！"
+                ><br>支付页面最开始想找一个提供支付接口的代理平台实现的，因为本人是<strong>酷爱学习</strong>的学生一枚，申请支付接口也不太现实，经过反复决策，还是麻烦一点，笨方法实现，<strong>节省成本</strong><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://pic.imgdb.cn/item/65191d31c458853aef9dc384.jpg"
+                      alt="加载失败，请及时联系我处理！"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://pic.imgdb.cn/item/65191d99c458853aef9dd322.jpg"
+                      alt="加载失败，请及时联系我处理！"
+                ><br>客服系统网上也很多的，大多数只提供免费试用，但偶然间发现了tawk.to这个平台。凭的就是一个<strong>良心</strong>，完全免费，且后台支持中文繁体方便使用，只需要将提供的代码inject到项目中就可以了，速度极快不受地区影响。这个平台还有移动端APP和桌面端应用消息提醒，也可以自动发送提醒到邮箱<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://www.tawk.to/wp-content/uploads/2020/12/TAWK-WORDMARK-1024x269.png"
+                      alt="加载失败，请及时联系我处理！"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://pic.imgdb.cn/item/65191ed1c458853aef9e8b2a.jpg"
+                      alt="加载失败，请及时联系我处理！"
+                ></p>
+<h2 id="心得体会"><a href="#心得体会" class="headerlink" title="心得体会"></a>心得体会</h2><p>三天下来，反反复复问题确实也出现了很多，但是各位要记住，当我们产生问题时，一定要去运用搜索引擎，在当今这个信息量爆炸的网络时代，搜索引擎已经成为我们获取新知、不断革新、自我进步的重要途径了。</p>
+<h1 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h1><p>以上就是SHTShop源码商城项目的一些记录，喜欢的朋友们来捧个场吧，如果你也想做一个类似的项目，根据这篇文章应该可以得到一些启发，有问题可以私信我哦~</p>
+<h1 id="CSDN已同步发布"><a href="#CSDN已同步发布" class="headerlink" title="CSDN已同步发布"></a><a class="link"   href="https://blog.csdn.net/2202_75780138/article/details/133466303" >CSDN已同步发布 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h1><h1 id="掘金已同步发布"><a href="#掘金已同步发布" class="headerlink" title="掘金已同步发布"></a><a class="link"   href="https://juejin.cn/post/7283813865720643623" >掘金已同步发布 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h1>]]></content>
+      <categories>
+        <category>源码商城</category>
+        <category>SHTShop</category>
+      </categories>
+      <tags>
+        <tag>源码商城</tag>
+        <tag>SHTShop</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Windows使用WSl安装Linux</title>
+    <url>/SHTBlog/d883/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a><em><strong>前言</strong></em></h2><blockquote>
+<ul>
+<li>开发人员可以在 Windows 计算机上同时访问 Windows 和 Linux 的强大功能。</li>
+<li>通过适用于 Linux 的 Windows 子系统 (WSL)，开发人员可以安装 Linux 发行版（例如 Ubuntu、OpenSUSE、Kali、Debian、Arch Linux 等），并直接在 Windows 上使用 Linux 应用程序、实用程序和 Bash 命令行工具，不用进行任何修改，也无需承担传统虚拟机或双启动设置的费用。</li>
+<li>本教程默认使用WSL2安装Ubuntu。</li>
+</ul>
+</blockquote>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a><em><strong>正文</strong></em></h2><h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>什么是WSL2？</p>
+<blockquote>
+<ul>
+<li>WSL 2 是适用于 Linux 的 Windows 子系统体系结构的一个新版本，它支持适用于 Linux 的 Windows 子系统在 Windows 上运行 ELF64 Linux 二进制文件。 它的主要目标是<strong>提高文件系统性能</strong>，以及添加<strong>完全的系统调用兼容性</strong>。</li>
+<li>这一新的体系结构改变了这些 Linux 二进制文件与Windows 和计算机硬件进行交互的方式，但仍然提供与 WSL 1（当前广泛可用的版本）中相同的用户体验。</li>
+<li>单个 Linux 分发版可以在 WSL 1 或 WSL 2 体系结构中运行。 每个分发版可随时升级或降级，并且你可以并行运行 WSL 1 和 WSL 2 分发版。 WSL 2 使用全新的体系结构，该体系结构受益于运行真正的 Linux 内核。</li>
+</ul>
+</blockquote>
+<h3 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h3><ul>
+<li><p>适用于 Linux 的 Windows 子系统随 Windows 操作系统一起提供，但必须先启用它并安装 Linux 发行版，然后才能开始使用它。</p>
+<p>若要使用简化的 –install 命令，必须运行最新版本的 Windows（内部版本 20262+）。 若要检查 Windows 版本及内部版本号，选择 Windows 徽标键 + R，然后键入“winver”，选择“确定”。 可以使用<a href="%22ms-settings:windowsupdate%22">“设置”菜单</a>或<a href="%22https://www.microsoft.com/software-download/%22">Windows更新助手</a>进行更新。</p>
+<p>如果希望安装除 Ubuntu 以外的 Linux 发行版，或者希望手动完成这些步骤，请参阅<a href="%22https://learn.microsoft.com/zh-cn/windows/wsl/install%22">WSL安装页</a>了解更多详细信息。</p>
+</li>
+</ul>
+<h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><ul>
+<li>以管理员模式打开PowerShell或Windows命令提示符输入命令以安装WSL2（安装过程中会提示重启电脑）<div class="highlight-container" data-rel="Powershell"><figure class="iseeu highlight powershell"><table><tr><td class="code"><pre><span class="line">wsl <span class="literal">--install</span></span><br></pre></td></tr></table></figure></div>
+这里你极有可能会出现下面的问题<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://pic.imgdb.cn/item/64e0706a661c6c8e54cda12c.png%3E"
+                      alt="加载失败，请及时联系我处理！"
+                ><br>原因嘛就不多说了，懂的都懂，不懂也无妨~<br>解决方法：<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://pic.imgdb.cn/item/64e07093661c6c8e54ce20fe.png%3E"
+                      alt="加载失败，请及时联系我处理！"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://pic.imgdb.cn/item/64e070ad661c6c8e54ce7246.png%3E"
+                      alt="加载失败，请及时联系我处理！"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://pic.imgdb.cn/item/64e070c5661c6c8e54cec7fe.png%3E"
+                      alt="加载失败，请及时联系我处理！"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://pic.imgdb.cn/item/64e070de661c6c8e54cfa369.png%3E"
+                      alt="加载失败，请及时联系我处理！"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://pic.imgdb.cn/item/64e070f1661c6c8e54d01897.png%3E"
+                      alt="加载失败，请及时联系我处理！"
+                ><br>再次尝试即可</li>
+<li>设置 Linux 用户名和密码<br>使用 WSL 安装 Linux 发行版的过程完成后，使用“开始”菜单打开该发行版（默认为Ubuntu）。 系统将要求你为 Linux 发行版创建“用户名”和“密码”。</li>
+</ul>
+<h2 id="检验成果"><a href="#检验成果" class="headerlink" title="检验成果"></a><em><strong>检验成果</strong></em></h2><p>在“开始”菜单打开Ubuntu即可<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://pic.imgdb.cn/item/64e07125661c6c8e54d12545.png%3E"
+                      alt="加载失败，请及时联系我处理！"
+                ></p>
+<h2 id="That’s-all-Thank-you-for-reading"><a href="#That’s-all-Thank-you-for-reading" class="headerlink" title="That’s all.Thank you for reading!"></a>That’s all.Thank you for reading!</h2><h2 id="CSDN已同步发布，点击查看"><a href="#CSDN已同步发布，点击查看" class="headerlink" title="CSDN已同步发布，点击查看"></a><a class="link"   href="https://blog.csdn.net/2202_75780138/article/details/132381308?spm=1001.2014.3001.5501" >CSDN已同步发布，点击查看 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h2><h2 id="掘金已同步发布，点击查看"><a href="#掘金已同步发布，点击查看" class="headerlink" title="掘金已同步发布，点击查看"></a><a class="link"   href="https://juejin.cn/post/7268830497650933779" >掘金已同步发布，点击查看 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h2>]]></content>
+      <categories>
+        <category>windows</category>
+        <category>wsl</category>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>windows</tag>
+        <tag>wsl</tag>
+        <tag>wsl-linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo主题更换与安装</title>
+    <url>/SHTBlog/6d10/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a><em><strong>前言</strong></em></h2><blockquote>
+<ul>
+<li>hexo提供的主题非常丰富，你可以先挑选一款心仪的主题。<br><a class="link"   href="https://hexo.io/themes/" >传送门 click here! <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+<li>hexo还没有安装部署的教程请看上一篇文章<br><a href="https://allensht.github.io/posts/bf56/">传送门 click here!</a></li>
+</ul>
+</blockquote>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a><em><strong>正文</strong></em></h2><h4 id="以下教程以Ubuntu为例，具体请参考hexo文档。"><a href="#以下教程以Ubuntu为例，具体请参考hexo文档。" class="headerlink" title="以下教程以Ubuntu为例，具体请参考hexo文档。"></a>以下教程以Ubuntu为例，具体请参考<a class="link"   href="https://hexo.io/zh-cn/docs/" >hexo文档 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>。</h4><h3 id="安装主题"><a href="#安装主题" class="headerlink" title="安装主题"></a>安装主题</h3><ul>
+<li>进入你的博客根目录<br><code>$ cd hexo/blog</code></li>
+<li>克隆你心仪的主题项目到<code>themes</code>文件夹<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> 心仪主题的项目克隆链接 themes/心仪主题的名称</span><br><span class="line"><span class="comment">#例如（这是我使用的主题）：</span></span><br><span class="line"><span class="comment">#$ git clone https://github.com/EvanNotFound/hexo-theme-redefine.git themes/redefine</span></span><br></pre></td></tr></table></figure></div></li>
+</ul>
+<blockquote>
+<ul>
+<li>可能你心仪的主题有其他的下载方式，请详细阅读主题的项目文档</li>
+<li>可能你心仪的主题要求添加一些依赖包才可以运行，请详细阅读主题的项目文档</li>
+<li>一个主题可能会有以下的结构：<br>.<br>├── _config.yml（尤其注意区分：这个是主题的配置文件，与你博客根目录下的hexo配置文件完全不同!）<br>├── languages<br>├── layout<br>├── scripts<br>└── source</li>
+</ul>
+</blockquote>
+<h3 id="启用主题"><a href="#启用主题" class="headerlink" title="启用主题"></a>启用主题</h3><ul>
+<li>编辑你博客根目录下的hexo配置文件<code>_config.yml</code><br><code>$ nano _config.yml</code><br>找到<code>theme: </code>（注意冒号后面有一个空格，在后面添加内容时不能没有此空格）并将你心仪的主题名称填在其后<br>例如（这是我使用的主题）：<br><code>theme: redefine</code></li>
+</ul>
+<h3 id="检验成果"><a href="#检验成果" class="headerlink" title="检验成果"></a>检验成果</h3><ul>
+<li>本地运行<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure></div></li>
+<li>确认无误后推送到GitHub<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#先ctrl+c结束刚才的本地运行</span></span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure></div></li>
+</ul>
+<h2 id="That’s-all-Thank-you-for-reading"><a href="#That’s-all-Thank-you-for-reading" class="headerlink" title="That’s all.Thank you for reading!"></a>That’s all.Thank you for reading!</h2><h2 id="CSDN已同步发布，点击查看"><a href="#CSDN已同步发布，点击查看" class="headerlink" title="CSDN已同步发布，点击查看"></a><a class="link"   href="https://blog.csdn.net/2202_75780138/article/details/132144919?spm=1001.2014.3001.5501" >CSDN已同步发布，点击查看 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h2><h2 id="掘金已同步发布，点击查看"><a href="#掘金已同步发布，点击查看" class="headerlink" title="掘金已同步发布，点击查看"></a><a class="link"   href="https://juejin.cn/post/7267576847109881895" >掘金已同步发布，点击查看 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h2>]]></content>
+      <categories>
+        <category>博客</category>
+        <category>hexo</category>
+        <category>hexo-themes</category>
+      </categories>
+      <tags>
+        <tag>博客</tag>
+        <tag>hexo</tag>
+        <tag>hexo-themes</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo添加自定义页面</title>
+    <url>/SHTBlog/805d/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a><em><strong>前言</strong></em></h2><blockquote>
+<ul>
+<li>小巧的hexo一定不能满足各位的需求吧！这时就需要在自己的博客中添加自定义页面了。</li>
+</ul>
+</blockquote>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a><em><strong>正文</strong></em></h2><ul>
+<li>进入博客根目录下的source文件夹并创建一个文件夹用来存放我们自己的页面  <div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> hexo/blog/source</span><br><span class="line">$ <span class="built_in">mkdir</span> HTML（文件夹名称可以自定义）</span><br></pre></td></tr></table></figure></div></li>
+<li>把自己的页面项目源码（允许包含多个子文件夹）拷贝到刚刚创建的HTML文件夹中（一定要有index.html文件以确保自定义页面可以成功引用）</li>
+<li>编辑自己的主题配置文件，在自己想要加入自定义页面的位置添上index.html文件路径<br>例如：<br><code>path: ./HTML/index.html # 只要填好正确的index.html文件路径就行，不同主题操作方式也不一样，请具体参考你的主题项目文档</code><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5f1d34d3062d4434b1d9f098929024ba~tplv-k3u1fbpfcp-zoom-1.image"
+                      alt="加载失败，请及时联系我处理！"
+                ></li>
+<li>编辑hexo配置文件_config.yml，在skip_render位置添加属性：  <div class="highlight-container" data-rel="Yaml"><figure class="iseeu highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">skip_render:</span> </span><br><span class="line">  <span class="bullet">-</span> <span class="string">./HTML/**</span></span><br><span class="line">  <span class="comment"># 表示HTML文件夹里面的所有内容都不会被hexo渲染</span></span><br></pre></td></tr></table></figure></div></li>
+</ul>
+<h2 id="检验成果"><a href="#检验成果" class="headerlink" title="检验成果"></a><em><strong>检验成果</strong></em></h2><ul>
+<li>本地运行  <div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure></div></li>
+<li>确认无误后推送到GitHub  <div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#先ctrl+c结束刚才的本地运行</span></span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure></div></li>
+</ul>
+<h2 id="That’s-all-Thank-you-for-reading"><a href="#That’s-all-Thank-you-for-reading" class="headerlink" title="That’s all.Thank you for reading!"></a>That’s all.Thank you for reading!</h2><h2 id="CSDN已同步发布，点击查看"><a href="#CSDN已同步发布，点击查看" class="headerlink" title="CSDN已同步发布，点击查看"></a><a class="link"   href="https://blog.csdn.net/2202_75780138/article/details/132148211?spm=1001.2014.3001.5501" >CSDN已同步发布，点击查看 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h2><h2 id="掘金已同步发布，点击查看"><a href="#掘金已同步发布，点击查看" class="headerlink" title="掘金已同步发布，点击查看"></a><a class="link"   href="https://juejin.cn/post/7267735038514020371" >掘金已同步发布，点击查看 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h2>]]></content>
+      <categories>
+        <category>博客</category>
+        <category>hexo</category>
+        <category>hexo-custom</category>
+      </categories>
+      <tags>
+        <tag>博客</tag>
+        <tag>hexo</tag>
+        <tag>hexo-custom</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>原生Js基于WebRTC实现Web端屏幕录制、回放、下载功能</title>
+    <url>/SHTBlog/883/</url>
+    <content><![CDATA[<h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><blockquote>
+<p>一切的一切都开始于那个夜黑风高的夜晚……<br>那晚，我急需要一款录屏软件，找来找去，可是：<br>付费去广告、付费去水印、付费高清、付费下载😅……<br> 等等，突然我灵光乍现，我还有一条路：<br> <strong>自己做！</strong><br> 于是<strong>原生Js基于WebRTC实现的Web端实时录屏功能</strong>就出来了！文末附开源地址😎<br> 先来试用一下成品吧→<a href="https://allensht.github.io/SHTRec/">SHTRec</a>←移动端暂不支持哦  </p>
+</blockquote>
+<h1 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h1><ul>
+<li>WebRTC</li>
+<li>原生Js</li>
+</ul>
+<h1 id="核心代码实现"><a href="#核心代码实现" class="headerlink" title="核心代码实现"></a>核心代码实现</h1><h2 id="html"><a href="#html" class="headerlink" title="html"></a>html</h2><p>整个的录屏功能区域都放在一个类名为main的div里面<br>类名为btn的div放上开始录屏button，并给button绑定start()函数，类名为rec</p>
+<div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;main&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;btn&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">&quot;start()&quot;</span> <span class="attr">class</span>=<span class="string">&quot;rec&quot;</span>&gt;</span>点击录屏<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
+<h2 id="Js"><a href="#Js" class="headerlink" title="Js"></a>Js</h2><p>js这里大体分为四部分：开始、结束、播放、下载</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">start</span>(<span class="params"></span>) &#123;</span><br><span class="line">     ......</span><br><span class="line">     <span class="comment">/* 开始 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">stop</span>(<span class="params"></span>) &#123;</span><br><span class="line">     ......</span><br><span class="line">     <span class="comment">/* 结束 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">replay</span>(<span class="params"></span>) &#123;</span><br><span class="line">     ......</span><br><span class="line">     <span class="comment">/* 播放 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">download</span>(<span class="params"></span>) &#123;</span><br><span class="line">     ......</span><br><span class="line">     <span class="comment">/* 下载 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>为了提高代码可读性，先声明一些需要用到的全局变量</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> stream;</span><br><span class="line"><span class="keyword">let</span> mediaRecorder;</span><br><span class="line"><span class="keyword">let</span> blobs;</span><br><span class="line"><span class="keyword">let</span> blob;</span><br><span class="line"><span class="keyword">let</span> url;</span><br><span class="line"><span class="keyword">let</span> videoTracks;</span><br><span class="line"><span class="keyword">let</span> ale;</span><br><span class="line"><span class="keyword">let</span> span;</span><br><span class="line"><span class="keyword">let</span> word;</span><br><span class="line"><span class="keyword">let</span> delLastSpan;</span><br><span class="line"><span class="keyword">let</span> delSpan;</span><br><span class="line"><span class="keyword">let</span> video;</span><br><span class="line"><span class="keyword">let</span> a;</span><br></pre></td></tr></table></figure></div>
+<h3 id="start"><a href="#start" class="headerlink" title="start()"></a>start()</h3><p>我们使用Web API中的<code>navigator.mediaDevices.getDisplayMedia</code>方法来获取屏幕分享（包括音频和视频）的流</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">start</span>(<span class="params"></span>) &#123;</span><br><span class="line">    navigator.<span class="property">mediaDevices</span>.<span class="title function_">getDisplayMedia</span>(&#123; <span class="attr">audio</span>:<span class="literal">true</span>,<span class="attr">video</span>: <span class="literal">true</span> &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p><strong>navigator.mediaDevices</strong>是Web API的一部分，它提供了访问用户的媒体输入设备（如摄像头、麦克风）和输出设备（如显示器、扬声器）的接口。  </p>
+<p>但我们只需要获取表示屏幕或应用程序窗口的媒体流，所以用到了<strong>getDisplayMedia</strong><br><strong>{ audio:true, video: true }</strong> 是一个约束对象，它指定了我们想要的媒体流的类型。我们需要获取的是包含音频（<code>audio: true</code>）和视频（<code>video: true</code>）的媒体流。  </p>
+<p>这个方法会返回一个Promise，该Promise在成功时解析会为一个<code>MediaStream</code>对象，该对象表示屏幕和音频的媒体流。随后我们将这个流传递给<code>&lt;video&gt;</code>元素  </p>
+<p>Promise成功后，会执行一个then异步操作方法</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line">.<span class="title function_">then</span>(<span class="keyword">function</span> (<span class="params">s</span>) &#123;</span><br><span class="line">            stream = s;</span><br><span class="line">            mediaRecorder = <span class="keyword">new</span> <span class="title class_">MediaRecorder</span>(stream, &#123;</span><br><span class="line">                <span class="attr">mimeType</span>: <span class="string">&#x27;video/webm&#x27;</span></span><br><span class="line">            &#125;);</span><br><span class="line">            blobs = [], mediaRecorder;</span><br><span class="line">            videoTracks = stream.<span class="title function_">getVideoTracks</span>();</span><br><span class="line">            <span class="keyword">if</span> (videoTracks.<span class="property">length</span> &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                mediaRecorder.<span class="title function_">start</span>(<span class="number">100</span>);</span><br><span class="line">                mediaRecorder.<span class="property">ondataavailable</span> = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">                    blobs.<span class="title function_">push</span>(e.<span class="property">data</span>);</span><br><span class="line">                &#125;;</span><br><span class="line">                <span class="variable language_">document</span>.<span class="property">body</span>.<span class="property">innerHTML</span> = <span class="string">`</span></span><br><span class="line"><span class="string">                &lt;div class=&quot;main&quot;&gt;</span></span><br><span class="line"><span class="string">                    &lt;div class=&quot;container&quot;&gt;</span></span><br><span class="line"><span class="string">                        &lt;span style=&quot;--d: 7&quot;&gt;&lt;/span&gt;</span></span><br><span class="line"><span class="string">                        &lt;span style=&quot;--d: 6&quot;&gt;&lt;/span&gt;</span></span><br><span class="line"><span class="string">                        &lt;span style=&quot;--d: 5&quot;&gt;&lt;/span&gt;</span></span><br><span class="line"><span class="string">                        &lt;span style=&quot;--d: 4&quot;&gt;&lt;/span&gt;</span></span><br><span class="line"><span class="string">                        &lt;span style=&quot;--d: 3&quot;&gt;&lt;/span&gt;</span></span><br><span class="line"><span class="string">                        &lt;span style=&quot;--d: 2&quot;&gt;&lt;/span&gt;</span></span><br><span class="line"><span class="string">                        &lt;span style=&quot;--d: 1&quot;&gt;&lt;/span&gt;</span></span><br><span class="line"><span class="string">                        &lt;span style=&quot;--d: 0&quot;&gt;&lt;/span&gt;</span></span><br><span class="line"><span class="string">                        &lt;span style=&quot;--d: 1&quot;&gt;&lt;/span&gt;</span></span><br><span class="line"><span class="string">                        &lt;span style=&quot;--d: 2&quot;&gt;&lt;/span&gt;</span></span><br><span class="line"><span class="string">                        &lt;span style=&quot;--d: 3&quot;&gt;&lt;/span&gt;</span></span><br><span class="line"><span class="string">                        &lt;span style=&quot;--d: 4&quot;&gt;&lt;/span&gt;</span></span><br><span class="line"><span class="string">                        &lt;span style=&quot;--d: 5&quot;&gt;&lt;/span&gt;</span></span><br><span class="line"><span class="string">                        &lt;span style=&quot;--d: 6&quot;&gt;&lt;/span&gt;</span></span><br><span class="line"><span class="string">                        &lt;span style=&quot;--d: 7&quot;&gt;&lt;/span&gt;</span></span><br><span class="line"><span class="string">                    &lt;/div&gt;</span></span><br><span class="line"><span class="string">                &lt;/div&gt; `</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure></div>
+<p><code>s</code> 是Promise的结果。  </p>
+<p>然后我们将Promise的结果赋值给 <code>stream</code> 变量： <code>stream = s;</code>  </p>
+<p><code>mediaRecorder = new MediaRecorder(stream, &#123;mimeType: &#39;video/webm&#39;&#125;);</code>：创建一个新的 MediaRecorder 对象，它将用于记录 <code>stream</code> 中的媒体内容。在这里我们设置了mimeType为 ‘video&#x2F;webm’，因此记录的媒体内容将是 webm 格式的视频。  </p>
+<p>大家是不是会认为<code>blobs = [], mediaRecorder;</code>这行代码有些问题？它试图将两个不同的对象赋值给 <code>blobs</code>，这在 JavaScript 中是不合法的。你认为应该这样写：<code>blobs = [mediaRecorder];</code>？然而并不是，这行代码的意思是创建一个新的数组，其中包含两个元素：一个空数组（用来存放<code>mediaRecorder</code> 的可用数据）和 <code>mediaRecorder</code> 对象，然后将这个新数组赋值给 <code>blobs</code> 变量。<br><code>videoTracks = stream.getVideoTracks();</code>是从 <code>stream</code> 中获取所有的视频轨道，并将它们存储在 <code>videoTracks</code> 变量中。 </p>
+<p><code>if (videoTracks.length &gt; 0) &#123;...&#125;</code>这行代码是在检查 <code>videoTracks</code> 中是否有视频轨道。如果有，我们才能将我们的项目继续下去  </p>
+<p><code>mediaRecorder.start(100);</code>这行代码将开始 <code>mediaRecorder</code> 的录制，参数100意味着每100毫秒，<code>mediaRecorder</code> 会生成一个新的数据片段。</p>
+<p><code>mediaRecorder.ondataavailable = (e) =&gt; &#123;blobs.push(e.data);&#125;;</code>这行代码是在当 <code>mediaRecorder</code> 开始录制后产生可用数据时，将数据添加到 <code>blobs</code> 数组中。  </p>
+<p><code>document.body.innerHTML = &quot;...&quot;;</code>这行代码是在将HTML代码赋值给 <code>document.body.innerHTML</code>，以动态改变html内容的方式来营造一个完美的用户体验，添加的HTML代码可以是一个动画来表示正在录屏，如下所示：<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://pic.imgdb.cn/item/651d5847c458853aefa75674.jpg"
+                      alt="加载失败，请及时联系我处理！"
+                ><br>这个动画对应的css样式为</p>
+<div class="highlight-container" data-rel="Css"><figure class="iseeu highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-pseudo">:root</span> &#123;</span><br><span class="line">    <span class="attr">--h</span>: <span class="number">280px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.container</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">    <span class="attribute">align-items</span>: center;</span><br><span class="line">    <span class="attribute">height</span>: <span class="built_in">var</span>(--h);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.container</span> <span class="selector-tag">span</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">linear-gradient</span>(to top, <span class="number">#d299c2</span> <span class="number">0%</span>, <span class="number">#fef9d7</span> <span class="number">100%</span>);</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">20%</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="built_in">calc</span>(<span class="built_in">var</span>(--h) * <span class="number">0.2</span> * <span class="number">0.5</span>);</span><br><span class="line">    <span class="attribute">margin-right</span>: <span class="number">4px</span>;</span><br><span class="line">    <span class="attribute">animation</span>: loading <span class="number">2.5s</span> infinite linear;</span><br><span class="line">    <span class="attribute">animation-delay</span>: <span class="built_in">calc</span>(<span class="number">0.2s</span> * <span class="built_in">var</span>(--d));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-class">.container</span> <span class="selector-tag">span</span><span class="selector-pseudo">:last-child</span> &#123;</span><br><span class="line">    <span class="attribute">margin-right</span>: <span class="number">0px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">@keyframes</span> loading &#123;</span><br><span class="line">    <span class="number">0%</span> &#123;</span><br><span class="line">      <span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(to right, <span class="number">#fa709a</span> <span class="number">0%</span>, <span class="number">#fee140</span> <span class="number">100%</span>);</span><br><span class="line">      <span class="attribute">height</span>: <span class="number">20%</span>;</span><br><span class="line">      <span class="attribute">border-radius</span>: <span class="built_in">calc</span>(<span class="built_in">var</span>(--h) * <span class="number">0.2</span> * <span class="number">0.5</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">50%</span> &#123;</span><br><span class="line">      <span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(to top, <span class="number">#d299c2</span> <span class="number">0%</span>, <span class="number">#fef9d7</span> <span class="number">100%</span>);</span><br><span class="line">      <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">      <span class="attribute">border-radius</span>: <span class="built_in">calc</span>(<span class="built_in">var</span>(--h) * <span class="number">1</span> * <span class="number">0.5</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">100%</span> &#123;</span><br><span class="line">      <span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(to top, <span class="number">#a8edea</span> <span class="number">0%</span>, <span class="number">#fed6e3</span> <span class="number">100%</span>);</span><br><span class="line">      <span class="attribute">height</span>: <span class="number">20%</span>;</span><br><span class="line">      <span class="attribute">border-radius</span>: <span class="built_in">calc</span>(<span class="built_in">var</span>(--h) * <span class="number">0.2</span> * <span class="number">0.5</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></div>
+<p>同时呢用户可能会拒绝给你权限来录制屏幕或发生一些其他的错误，那么就需要针对Promise的错误情况来做一些处理  </p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line">.<span class="title function_">catch</span>(<span class="keyword">function</span> (<span class="params">error</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(error);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></div>
+<p><code>.catch(function (error) &#123;...&#125;)</code>是Promise的catch方法，它将在Promise发生错误时执行。<code>error</code> 是发生的错误对象。  </p>
+<p>然后我们用<code>console.log(error);</code>在控制台中打印出错误信息，让我们可以在控制台中看到错误的详细信息，从而更容易地调试和解决问题。</p>
+<h3 id="stop"><a href="#stop" class="headerlink" title="stop()"></a>stop()</h3><p>开始录制当然也要停止录制了，通过创建一个stop函数来控制录制</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">stop</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (stream) &#123;</span><br><span class="line">        stream.<span class="title function_">getTracks</span>().<span class="title function_">forEach</span>(<span class="function"><span class="params">track</span> =&gt;</span> track.<span class="title function_">stop</span>());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable language_">document</span>.<span class="property">body</span>.<span class="property">innerHTML</span> = <span class="string">`</span></span><br><span class="line"><span class="string">    &lt;div class=&quot;main&quot;&gt;</span></span><br><span class="line"><span class="string">        &lt;div class=&quot;scr&quot;&gt;</span></span><br><span class="line"><span class="string">            &lt;span class=&quot;stopLog&quot;&gt;录制完毕！&lt;/span&gt;</span></span><br><span class="line"><span class="string">        &lt;/div&gt;</span></span><br><span class="line"><span class="string">    &lt;/div&gt; `</span>;</span><br><span class="line">&#125;  </span><br></pre></td></tr></table></figure></div>
+<p>我们首先检查是否存在一个名为<code>stream</code>的变量。如果<code>stream</code>存在（也就是说，它不是<code>null</code>或者<code>undefined</code>），那么代码就会执行花括号里面的语句来停止录制。</p>
+<p>如果stream不是<code>null</code>或者<code>undefined``那么stream.getTracks()</code>方法就会被调用。这个方法返回一个包含流中所有轨道的数组。</p>
+<p>然后，用<code>forEach()</code>方法被用于遍历这个数组。对于数组中的每一个轨道（<code>track</code>），都会调用它的<code>stop()</code>方法，以停止该轨道。</p>
+<p><code>document.body.innerHTML = &quot;...&quot;;</code>这行代码是在将HTML代码赋值给 <code>document.body.innerHTML</code>，以动态改变html内容的方式来提示用户录制结束，如下图所示：<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://pic.imgdb.cn/item/651d5871c458853aefa7647d.jpg"
+                      alt="加载失败，请及时联系我处理！"
+                ></p>
+<h3 id="replay"><a href="#replay" class="headerlink" title="replay()"></a>replay()</h3><p>当录制完毕后我们需要将录制好的视频供用户播放。</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">replay</span>(<span class="params"></span>) &#123;</span><br><span class="line">    blob = <span class="keyword">new</span> <span class="title class_">Blob</span>(blobs, &#123;</span><br><span class="line">        <span class="attr">type</span>: <span class="string">&#x27;video/webm&#x27;</span></span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="variable language_">document</span>.<span class="property">body</span>.<span class="property">innerHTML</span> = <span class="string">`</span></span><br><span class="line"><span class="string">    &lt;div class=&quot;main&quot;&gt;</span></span><br><span class="line"><span class="string">        &lt;div class=&quot;scr&quot;&gt;</span></span><br><span class="line"><span class="string">            &lt;video class=&quot;vid&quot; autoplay controls width=&quot;800px&quot; height=&quot;280px&quot;&gt;&lt;/video&gt;</span></span><br><span class="line"><span class="string">        &lt;/div&gt;</span></span><br><span class="line"><span class="string">    &lt;/div&gt; `</span>;</span><br><span class="line">    video = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;.vid&quot;</span>);</span><br><span class="line">    video.<span class="property">src</span> = <span class="variable constant_">URL</span>.<span class="title function_">createObjectURL</span>(blob);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>首先创建一个新的<code>Blob</code>对象，并使用先前存储的<code>blobs</code>数组和媒体类型<code>&#39;video/webm&#39;</code>。<br><code>Blob</code>对象表示一段二进制数据，在这里，它表示的是视频文件。</p>
+<p><code>document.body.innerHTML = &quot;...&quot;;</code>这行代码和之前的是一个道理，将HTML代码赋值给 <code>document.body.innerHTML</code>，以动态改变html内容的方式来显示录制好的视频</p>
+<p>接下来，获取这个新的<code>video</code>元素，并将其<code>src</code>属性设置为新创建的<code>Blob</code>对象的URL。这是通过调用<code>URL.createObjectURL(blob)</code>实现的，这个方法会返回一个新的URL，代表<code>blob</code>对象。这样，<code>video</code>元素就可以加载并播放这个视频了。<br><code>video</code>元素具有<code>autoplay</code>和<code>controls</code>属性，意味着视频将在加载后自动播放，并且用户可以控制视频的播放。</p>
+<h3 id="download"><a href="#download" class="headerlink" title="download()"></a>download()</h3><p>使用录屏功能的根本目的还是为了下载到本地，所以我们再创建一个下载函数</p>
+<div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">download</span>(<span class="params"></span>) &#123;</span><br><span class="line">    blob = <span class="keyword">new</span> <span class="title class_">Blob</span>(blobs, &#123;</span><br><span class="line">        <span class="attr">type</span>: <span class="string">&#x27;video/webm&#x27;</span></span><br><span class="line">    &#125;);</span><br><span class="line">    url = <span class="variable constant_">URL</span>.<span class="title function_">createObjectURL</span>(blob);</span><br><span class="line">    a = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&#x27;a&#x27;</span>);</span><br><span class="line">    a.<span class="property">href</span> = url;</span><br><span class="line">    a.<span class="property">download</span> = <span class="string">&#x27;record.webm&#x27;</span>;</span><br><span class="line">    a.<span class="property">style</span>.<span class="property">display</span> = <span class="string">&#x27;none&#x27;</span>;</span><br><span class="line">    a.<span class="title function_">click</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>这里和replay()函数的原理大体一致，通过调用<code>URL.createObjectURL(blob)</code>返回一个新的URL，代表<code>blob</code>对象。</p>
+<p>接下来创建一个新的<code>&lt;a&gt;</code>元素，并将其<code>href</code>属性设置为新创建的URL</p>
+<p>然后将<code>&lt;a&gt;</code>元素的<code>download</code>属性设置为<code>&#39;record.webm&#39;</code>，也就是将视频文件将被命名为<code>record.webm</code>。</p>
+<p>接着将<code>&lt;a&gt;</code>元素的<code>style.display</code>属性设置为<code>&#39;none&#39;</code>，这样用户在页面上就看不到这个链接了</p>
+<p>最后调用<code>&lt;a&gt;</code>元素的<code>click()</code>方法，这会模拟用户点击链接的行为，从而自动下载视频文件。</p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>看到到这里，实现屏幕的录制、回放、下载这个功能实现起来是不是也没有很难了？<br>下面是GitHub开源地址，如果这篇文章对你有所启发，欢迎点赞收藏+转发😁</p>
+<h1 id="Github已开源，欢迎star⭐"><a href="#Github已开源，欢迎star⭐" class="headerlink" title="Github已开源，欢迎star⭐"></a><a class="link"   href="https://github.com/Allensht/SHTRec" >Github已开源，欢迎star⭐ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h1>]]></content>
+      <categories>
+        <category>Js</category>
+        <category>WebRTC</category>
+        <category>在线录屏</category>
+      </categories>
+      <tags>
+        <tag>Js</tag>
+        <tag>WebRTC</tag>
+        <tag>在线录屏</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo+Github部署教程（防踩坑）</title>
+    <url>/SHTBlog/bf56/</url>
+    <content><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a><em><strong>背景</strong></em></h2><ul>
+<li><h4 id="什么是hexo？"><a href="#什么是hexo？" class="headerlink" title="什么是hexo？"></a>什么是hexo？</h4></li>
+</ul>
+<blockquote>
+<p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他标记语言）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+</blockquote>
+<ul>
+<li><h4 id="为什么使用hexo？"><a href="#为什么使用hexo？" class="headerlink" title="为什么使用hexo？"></a>为什么使用hexo？</h4><ul>
+<li>hexo提供了丰富的<a class="link"   href="https://hexo.io/themes/" >主题 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 。</li>
+<li>相比自己去开发搭建一个博客系统，而且还要自己购买域名和服务器，搭建博客成本太高。除了购买成本，还需要花时间定期维护它，所以，选择免费且高速的hexo再好不过了。</li>
+<li>搭建快速方便，与GitHub搭配，可以便捷的部署我们的博客网站（主要是不需要自己去买服务器）</li>
+</ul>
+</li>
+</ul>
+<h2 id="hexo安装与部署"><a href="#hexo安装与部署" class="headerlink" title="hexo安装与部署"></a><em><strong>hexo安装与部署</strong></em></h2><p>以下教程以Ubuntu为例，具体请参考<a class="link"   href="https://hexo.io/zh-cn/docs/" >hexo文档 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>。</p>
+<h3 id="前提"><a href="#前提" class="headerlink" title="前提"></a><em><strong>前提</strong></em></h3><ul>
+<li>安装git<br><code>$ sudo apt-get install git-core</code></li>
+<li>安装Node.js及npm<br><code>$ sudo apt install nodejs npm</code><br>准备一个文件夹用来安装hexo并进入，便于操作管理：<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">mkdir</span> hexo</span><br><span class="line">$ <span class="built_in">cd</span> hexo</span><br></pre></td></tr></table></figure></div></li>
+<li>安装hexo<br><code>$ npm install hexo</code></li>
+<li>将 Hexo 所在的目录下的 node_modules 添加到环境变量之中：<br><code>$echo &#39;PATH=&quot;$PATH:./node_modules/.bin&quot;&#39; &gt;&gt; ~/.profile</code></li>
+</ul>
+<h3 id="本地建站"><a href="#本地建站" class="headerlink" title="本地建站"></a><em><strong>本地建站</strong></em></h3><ul>
+<li>在hexo目录下将所需文件创建在blog文件夹中，便于操作管理<br><code>$ hexo init blog</code><br><code>$ cd blog</code><br><code>$ npm install</code><br>完成后blog文件夹的目录如下：<blockquote>
+<p>.<br>├── _config.yml<br>├── package.json<br>├── scaffolds<br>├── source<br>|├── _drafts<br>|└── _posts<br>└── themes</p>
+</blockquote>
+</li>
+<li>更改_config.yml文件<br>网站的<a class="link"   href="https://hexo.io/zh-cn/docs/configuration" >配置 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>信息，可以在此配置大部分的参数。</li>
+</ul>
+<h4 id="网站"><a href="#网站" class="headerlink" title="网站"></a>网站</h4><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>title</code></td>
+<td>网站标题</td>
+</tr>
+<tr>
+<td><code>subtitle</code></td>
+<td>网站副标题</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>网站描述</td>
+</tr>
+<tr>
+<td><code>keywords</code></td>
+<td>网站的关键词。支持多个关键词。</td>
+</tr>
+<tr>
+<td><code>author</code></td>
+<td>你的名字</td>
+</tr>
+<tr>
+<td><code>language</code></td>
+<td>网站使用的语言。对于简体中文用户来说，使用不同的主题可能需要设置成不同的值，请参考你的主题的文档自行设置，常见的有 zh-Hans和 zh-CN。</td>
+</tr>
+<tr>
+<td><code>timezone</code></td>
+<td>网站时区。Hexo 默认使用你电脑的时区。请参考<a class="link"   href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" >时区列表 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>进行设置，如 <code>America/New_York</code>,<code>Japan</code>,和<code>UTC</code>。一般的，对于中国大陆地区可以使用 <code>Asia/Shanghai</code>。</td>
+</tr>
+</tbody></table>
+<h4 id="网址"><a href="#网址" class="headerlink" title="网址"></a>网址</h4><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>url</code></td>
+<td>网址, 必须以<code>http://</code>或<code>https://</code>开头</td>
+<td><code>source</code></td>
+</tr>
+<tr>
+<td><code>root</code></td>
+<td>网站根目录</td>
+<td><code>url&#39;s pathname</code></td>
+</tr>
+<tr>
+<td><code>permalink</code></td>
+<td>文章的<a class="link"   href="https://hexo.io/zh-cn/docs/permalinks" >永久链接 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>格式</td>
+<td><code>:year/:month/:day/:title/</code></td>
+</tr>
+<tr>
+<td><code>permalink_defaults</code></td>
+<td>永久链接中各部分的默认值</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pretty_urls</code></td>
+<td>改写<a class="link"   href="https://hexo.io/zh-cn/docs/variables" >permalink <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>的值来美化 URL</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pretty_urls.trailing_index</code></td>
+<td>是否在永久链接中保留尾部的 index.html，设置为 false 时去除</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>pretty_urls.trailing_html</code></td>
+<td>是否在永久链接中保留尾部的<code>.html</code>,设置为<code>false</code>时去除 (对尾部的<code>index.html</code>无效)</td>
+<td><code>true</code></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>网站存放在子目录<br>如果您的网站存放在子目录中，例如<code>http://example.com/blog</code>，则请将您的 url 设为 <code>http://example.com/blog</code>并把<code>root</code>设为<code>/blog/</code>。</p>
+</blockquote>
+<p>例如：</p>
+<div class="highlight-container" data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 比如，一个页面的永久链接是 http://example.com/foo/bar/index.html</span></span><br><span class="line"><span class="attr">pretty_urls:</span></span><br><span class="line">  <span class="attr">trailing_index:</span> <span class="literal">false</span></span><br><span class="line"><span class="comment"># 此时页面的永久链接会变为 http://example.com/foo/bar/</span></span><br></pre></td></tr></table></figure></div>
+<h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><p>一般不用改</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>source_dir</code></td>
+<td>资源文件夹，这个文件夹用来存放内容。</td>
+<td><code>source</code></td>
+</tr>
+<tr>
+<td><code>public_dir</code></td>
+<td>公共文件夹，这个文件夹用于存放生成的站点文件。</td>
+<td><code>public</code></td>
+</tr>
+<tr>
+<td><code>tag_dir</code></td>
+<td>标签文件夹</td>
+<td><code>tags</code></td>
+</tr>
+<tr>
+<td><code>archive_dir</code></td>
+<td>归档文件夹</td>
+<td><code>archives</code></td>
+</tr>
+<tr>
+<td><code>category_dir</code></td>
+<td>分类文件夹</td>
+<td><code>categories</code></td>
+</tr>
+<tr>
+<td><code>code_dir</code></td>
+<td>Include code 文件夹，source_dir 下的子目录</td>
+<td><code>downloads/code</code></td>
+</tr>
+<tr>
+<td><code>i18n_dir</code></td>
+<td>国际化（i18n）文件夹</td>
+<td><code>:lang</code></td>
+</tr>
+<tr>
+<td><code>skip_render</code></td>
+<td>跳过指定文件的渲染。匹配到的文件将会被不做改动地复制到 public 目录中。您可使用 <a class="link"   href="https://github.com/micromatch/micromatch#extended-globbing" >glob表达式 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>来匹配路径。</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>例如：</p>
+<div class="highlight-container" data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">skip_render:</span> <span class="string">&quot;mypage/**/*&quot;</span></span><br><span class="line"><span class="comment"># 将会直接将 `source/mypage/index.html` 和 `source/mypage/code.js` 不做改动地输出到 &#x27;public&#x27; 目录</span></span><br><span class="line"><span class="comment"># 你也可以用这种方法来跳过对指定文章文件的渲染</span></span><br><span class="line"><span class="attr">skip_render:</span> <span class="string">&quot;_posts/test-post.md&quot;</span></span><br><span class="line"><span class="comment"># 这将会忽略对 &#x27;test-post.md&#x27; 的渲染</span></span><br></pre></td></tr></table></figure></div>
+<h4 id="文章"><a href="#文章" class="headerlink" title="文章"></a>文章</h4><p>一般不用改</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>new_post_name</code></td>
+<td>新文章的文件名称</td>
+<td><code>:title.md</code></td>
+</tr>
+<tr>
+<td><code>default_layout</code></td>
+<td>预设布局<code>post</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>auto_spacing</code></td>
+<td>在中文和英文之间加入空格</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>titlecase</code></td>
+<td>把标题转换为 title case</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>external_link</code></td>
+<td>在新标签中打开链接</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>external_link.enable</code></td>
+<td>在新标签中打开链接</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>external_link.field</code></td>
+<td>对整个网站（<code>site</code>）生效或仅对文章（<code>post</code>）生效</td>
+<td><code>site</code></td>
+</tr>
+<tr>
+<td><code>external_link.exclude</code></td>
+<td>需要排除的域名。主域名和子域名如 www 需分别配置</td>
+<td><code>[]</code></td>
+</tr>
+<tr>
+<td><code>filename_case</code></td>
+<td>把文件名称转换为 (1) 小写或 (2) 大写</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>render_drafts</code></td>
+<td>显示草稿</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>post_asset_folder</code></td>
+<td>启动<a class="link"   href="https://hexo.io/zh-cn/docs/asset-folders" >Asset文件夹 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>relative_link</code></td>
+<td>把链接改为与根目录的相对位址</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>future</code></td>
+<td>显示未来的文章</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>highlight</code></td>
+<td>代码块的设置, 请参考<a class="link"   href="https://hexo.io/zh-cn/docs/syntax-highlight#Highlight-js" >Highlight.js <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>进行设置</td>
+<td></td>
+</tr>
+<tr>
+<td><code>prismjs</code></td>
+<td>代码块的设置, 请参考<a class="link"   href="https://hexo.io/zh-cn/docs/syntax-highlight#PrismJS" >PrismJS <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>进行设置</td>
+<td></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>相对地址<br>默认情况下，Hexo 生成的超链接都是绝对地址。例如，如果您的网站域名为<code>example.com</code>，您有一篇文章名为<code>hello</code>，那么绝对链接可能像这样：<code>http://example.com/hello.html</code>，它是绝对于域名的。相对链接像这样：<code>/hello.html</code>，也就是说，无论用什么域名访问该站点，都没有关系，这在进行反向代理时可能用到。通常情况下，建议使用绝对地址。</p>
+</blockquote>
+<h4 id="分类-标签"><a href="#分类-标签" class="headerlink" title="分类 &amp; 标签"></a>分类 &amp; 标签</h4><p>一般不用改</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>表述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>default_category</code></td>
+<td>默认分类</td>
+<td><code>uncategorized</code></td>
+</tr>
+<tr>
+<td><code>category_map</code></td>
+<td>分类别名</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tag_map</code></td>
+<td>标签别名</td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="日期-时间格式"><a href="#日期-时间格式" class="headerlink" title="日期 &#x2F; 时间格式"></a>日期 &#x2F; 时间格式</h4><p>Hexo 使用<a class="link"   href="http://momentjs.com/" >Moment.js <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>来解析和显示时间。<br>一般不用改</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>date_format</code></td>
+<td>日期格式</td>
+<td><code>YYYY-MM-DD</code></td>
+</tr>
+<tr>
+<td><code>time_format</code></td>
+<td>时间格式</td>
+<td><code>HH:mm:ss</code></td>
+</tr>
+<tr>
+<td><code>updated_option</code></td>
+<td>当 Front Matter 中没有指定<a class="link"   href="https://hexo.io/zh-cn/docs/variables#%E9%A1%B5%E9%9D%A2%E5%8F%98%E9%87%8F" >updated <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>时 updated 的取值</td>
+<td><code>mtime</code></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>updated_option<br><code>updated_option</code>控制了当 Front Matter 中没有指定<code>updated</code>时，<code>updated</code>如何取值：</p>
+<ul>
+<li><code>mtime</code>: 使用文件的最后修改时间。这是从 Hexo 3.0.0 开始的默认行为。</li>
+<li><code>date</code>: 使用<code>date</code>作为<code>updated</code>的值。可被用于 Git 工作流之中，因为使用 Git 管理站点时，文件的最后修改日期常常会发生改变</li>
+<li><code>empty</code>: 直接删除<code>updated</code>。使用这一选项可能会导致大部分主题和插件无法正常工作。<br><code>use_date_for_updated</code>选项已经被废弃，将会在下个重大版本发布时去除。请改为使用 <code>updated_option: &#39;date&#39;</code>。</li>
+</ul>
+</blockquote>
+<h4 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h4><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>per_page</code></td>
+<td>每页显示的文章量 (0 &#x3D; 关闭分页功能)</td>
+<td><code>10</code></td>
+</tr>
+<tr>
+<td><code>pagination_dir</code></td>
+<td>分页目录</td>
+<td><code>page</code></td>
+</tr>
+</tbody></table>
+<p>例如：</p>
+<div class="highlight-container" data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">pagination_dir:</span> <span class="string">&#x27;page&#x27;</span></span><br><span class="line"><span class="comment"># http://example.com/page/2</span></span><br><span class="line">  </span><br><span class="line"><span class="attr">pagination_dir:</span> <span class="string">&#x27;awesome-page&#x27;</span></span><br><span class="line"><span class="comment"># http://example.com/awesome-page/2</span></span><br></pre></td></tr></table></figure></div>
+<h4 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h4><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>theme</code></td>
+<td>当前主题名称。值为<code>false</code>时禁用主题</td>
+</tr>
+<tr>
+<td><code>theme_config</code></td>
+<td>主题的配置文件。在这里放置的配置会覆盖主题目录下的<code>_config.yml</code>中的配置</td>
+</tr>
+<tr>
+<td><code>deploy</code></td>
+<td>部署部分的设置</td>
+</tr>
+<tr>
+<td><code>meta_generator</code></td>
+<td><a class="link"   href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/meta#%E5%B1%9E%E6%80%A7" >Meta generator <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>标签。 值为<code>false</code>时 Hexo 不会在头部插入该标签</td>
+</tr>
+</tbody></table>
+<h4 id="包括或不包括目录和文件"><a href="#包括或不包括目录和文件" class="headerlink" title="包括或不包括目录和文件"></a>包括或不包括目录和文件</h4><p>在 Hexo 配置文件中，通过设置 include&#x2F;exclude 可以让 Hexo 进行处理或忽略某些目录和文件夹。你可以使用<a class="link"   href="https://github.com/isaacs/minimatch" >glob 表达式 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>对目录和文件进行匹配。<br><code>include</code>和<code>exclude</code>选项只会应用到<code>source/</code>，而<code>ignore</code>选项会应用到所有文件夹。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>include</code></td>
+<td>Hexo 默认会不包括<code>source/</code>下的文件和文件夹（包括名称以下划线和<code>.</code>开头的文件和文件夹，Hexo 的<code>_posts</code>和<code>_data</code>等目录除外）。通过设置此字段将使 Hexo 处理他们并将它们复制到<code>source</code>目录下。</td>
+</tr>
+<tr>
+<td><code>exclude</code></td>
+<td>Hexo 不包括<code>source/</code>下的这些文件和目录</td>
+</tr>
+<tr>
+<td><code>ignore</code></td>
+<td>Hexo 会忽略整个 Hexo 项目下的这些文件夹或文件</td>
+</tr>
+</tbody></table>
+<p>例如：</p>
+<div class="highlight-container" data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 处理或不处理目录或文件</span></span><br><span class="line"><span class="attr">include:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">&quot;.nojekyll&quot;</span></span><br><span class="line">  <span class="comment"># 处理 &#x27;source/css/_typing.css&#x27;</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">&quot;css/_typing.css&quot;</span></span><br><span class="line">  <span class="comment"># 处理 &#x27;source/_css/&#x27; 中的任何文件，但不包括子目录及其其中的文件。</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">&quot;_css/*&quot;</span></span><br><span class="line">  <span class="comment"># 处理 &#x27;source/_css/&#x27; 中的任何文件和子目录下的任何文件</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">&quot;_css/**/*&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">exclude:</span></span><br><span class="line">  <span class="comment"># 不处理 &#x27;source/js/test.js&#x27;</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">&quot;js/test.js&quot;</span></span><br><span class="line">  <span class="comment"># 不处理 &#x27;source/js/&#x27; 中的文件、但包括子目录下的所有目录和文件</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">&quot;js/*&quot;</span></span><br><span class="line">  <span class="comment"># 不处理 &#x27;source/js/&#x27; 中的文件和子目录下的任何文件</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">&quot;js/**/*&quot;</span></span><br><span class="line">  <span class="comment"># 不处理 &#x27;source/js/&#x27; 目录下的所有文件名以 &#x27;test&#x27; 开头的文件，但包括其它文件和子目录下的单文件</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">&quot;js/test*&quot;</span></span><br><span class="line">  <span class="comment"># 不处理 &#x27;source/js/&#x27; 及其子目录中任何以 &#x27;test&#x27; 开头的文件</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">&quot;js/**/test*&quot;</span></span><br><span class="line">  <span class="comment"># 不要用 exclude 来忽略 &#x27;source/_posts/&#x27; 中的文件。你应该使用 &#x27;skip_render&#x27;，或者在要忽略的文件的文件名之前加一个下划线 &#x27;_&#x27;</span></span><br><span class="line">  <span class="comment"># 在这里配置一个 - &quot;_posts/hello-world.md&quot; 是没有用的。</span></span><br><span class="line"></span><br><span class="line"><span class="attr">ignore:</span></span><br><span class="line">  <span class="comment"># 忽略任何一个名叫 &#x27;foo&#x27; 的文件夹</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">&quot;**/foo&quot;</span></span><br><span class="line">  <span class="comment"># 只忽略 &#x27;themes/&#x27; 下的 &#x27;foo&#x27; 文件夹</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">&quot;**/themes/*/foo&quot;</span></span><br><span class="line">  <span class="comment"># 对 &#x27;themes/&#x27; 目录下的每个文件夹中忽略名叫 &#x27;foo&#x27; 的子文件夹</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">&quot;**/themes/**/foo&quot;</span></span><br></pre></td></tr></table></figure></div>
+<h4 id="使用代替配置文件"><a href="#使用代替配置文件" class="headerlink" title="使用代替配置文件"></a>使用代替配置文件</h4><p>可以在 hexo-cli 中使用<code>--config</code>参数来指定自定义配置文件的路径。你可以使用一个 YAML 或 JSON 文件的路径，也可以使用逗号分隔（无空格）的多个 YAML 或 JSON 文件的路径。例如：</p>
+<div class="highlight-container" data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 用 &#x27;custom.yml&#x27; 代替 &#x27;_config.yml&#x27;</span></span><br><span class="line"><span class="string">$</span> <span class="string">hexo</span> <span class="string">server</span> <span class="string">--config</span> <span class="string">custom.yml</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 &#x27;custom.yml&#x27; 和 &#x27;custom2.json&#x27;，优先使用 &#x27;custom3.yml&#x27;，然后是 &#x27;custom2.json&#x27;</span></span><br><span class="line"><span class="string">$</span> <span class="string">hexo</span> <span class="string">generate</span> <span class="string">--config</span> <span class="string">custom.yml,custom2.json,custom3.yml</span></span><br></pre></td></tr></table></figure></div>
+<p>当你指定了多个配置文件以后，Hexo 会按顺序将这部分配置文件合并成一个 _multiconfig.yml。如果遇到重复的配置，排在后面的文件的配置会覆盖排在前面的文件的配置。这个原则适用于任意数量、任意深度的 YAML 和 JSON 文件。</p>
+<p>例如，使用<code>--options</code>指定了两个自定义配置文件：<br><code>$ hexo generate --config custom.yml,custom2.json</code></p>
+<p>如果<code>custom.yml</code>中指定了<code>foo: bar</code>，在custom2.json中指定了<code>&quot;foo&quot;: &quot;dinosaur&quot;</code>，那么在<code>_multiconfig.yml</code>中你会得到<code>foo: dinosaur</code>。</p>
+<p>更多信息请参考<a class="link"   href="https://hexo.io/zh-cn/docs/configuration" >配置文档 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>有关主题教程请等待更新</p>
+<p>接下里可以在blog目录下使用以下命令在localhost查看自己的博客配置情况：</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean（清除缓存）</span><br><span class="line">$ hexo g（生成静态文件）</span><br><span class="line">$ hexo s（启动本地服务）（ctrl + c 即可结束本地运行）</span><br></pre></td></tr></table></figure></div>
+<hr>
+<h3 id="准备好了就开始学习如何部署吧！"><a href="#准备好了就开始学习如何部署吧！" class="headerlink" title="准备好了就开始学习如何部署吧！"></a>准备好了就开始学习如何部署吧！</h3><ul>
+<li>登录GitHub账号（这个就不多说了 <a class="link"   href="https://www.github.com/" >GitHub传送门 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>）</li>
+<li>新建一个仓库（仓库名称格式：<code>GitHub用户名.github.io</code>)</li>
+<li>在blog目录下配置GitHub信息：  <div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">&quot;your github name here&quot;</span></span><br><span class="line">$ git config --global user.email <span class="string">&quot;your email for github here&quot;</span></span><br></pre></td></tr></table></figure></div></li>
+<li>在blog目录下创建ssh：<br><code>$ ssh-keygen -t rsa -C &quot;your email for github here&quot;</code></li>
+<li>找到给出的ssh密钥文件<code>.ssh/id_rsa</code>和<code>.ssh/id_rsa.pub</code></li>
+<li>在GitHub的<code>Setting</code>里面，找到<code>SSH keys</code>，把<code>id_rsa.pub</code>里面的内容全部复制到<code>key</code>中，<code>title</code>随便即可</li>
+<li>在之前讲到的<code>_config,yml</code>中进行编辑，拉到最底部的<code>deploy:</code>进行编辑：<div class="highlight-container" data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:your</span> <span class="string">github</span> <span class="string">name/your</span> <span class="string">github</span> <span class="string">name.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure></div></li>
+<li>再拉到前面，找到网址配置，在<code>url:</code>后进行编辑：（下面的网址就是你博客的访问地址，部署好后就可以访问了）<div class="highlight-container" data-rel="Yml"><figure class="iseeu highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">url:</span> <span class="string">https://your</span> <span class="string">github</span> <span class="string">name.github.io</span></span><br></pre></td></tr></table></figure></div></li>
+<li>在blog目录下安装git部署工具<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></div></li>
+<li>在blog目录下输入以下命令开始部署到GitHub<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo d（部署到GitHub）</span><br></pre></td></tr></table></figure></div>
+稍等部署成功即可访问你的博客链接了</li>
+</ul>
+<h2 id="That’s-all-Thank-you-for-reading"><a href="#That’s-all-Thank-you-for-reading" class="headerlink" title="That’s all.Thank you for reading!"></a>That’s all.Thank you for reading!</h2><h2 id="CSDN已同步发布，点击查看"><a href="#CSDN已同步发布，点击查看" class="headerlink" title="CSDN已同步发布，点击查看"></a><a class="link"   href="https://blog.csdn.net/2202_75780138/article/details/132112279?spm=1001.2014.3001.5501" >CSDN已同步发布，点击查看 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h2><h2 id="掘金已同步发布，点击查看"><a href="#掘金已同步发布，点击查看" class="headerlink" title="掘金已同步发布，点击查看"></a><a class="link"   href="https://juejin.cn/post/7267578888821669924" >掘金已同步发布，点击查看 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h2>]]></content>
+      <categories>
+        <category>博客</category>
+        <category>hexo</category>
+        <category>hexo-GitHub</category>
+      </categories>
+      <tags>
+        <tag>博客</tag>
+        <tag>hexo</tag>
+        <tag>hexo-GitHub</tag>
+      </tags>
+  </entry>
+</search>

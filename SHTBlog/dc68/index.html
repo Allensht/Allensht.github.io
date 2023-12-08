@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="源码商城,SHTShop">
+    
+    <meta name="author" content="Allensht">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    
+        
+            <link rel="preconnect" href="https://npm.elemecdn.com" crossorigin>
+        
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://allensht.github.io/SHTBlog/dc68/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="前言 十天假期无聊？那就搞个项目玩玩，左思右想，看到网上很多源码商城项目不错，还可以赚点零花钱🤔于是乎，突发奇想，既然网上的那些平台资源大多都是从互联网上爬的，很有可能存在版权问题，违法的事情咱肯定不能做，所以SHTShop源码商城郑重承诺： 本站所有资源全部经过原作者许可，或是可商用开源项目，又或是博主自己写的项目，所以各位可以放心来到小站光顾一下，并且商品都是良心价哦，拿去练手绝对没问题😁">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SHTShop！假期三天自己做了一个源码商城">
+<meta property="og:url" content="https://allensht.github.io/SHTBlog/dc68/">
+<meta property="og:site_name" content="SHTBlog">
+<meta property="og:description" content="前言 十天假期无聊？那就搞个项目玩玩，左思右想，看到网上很多源码商城项目不错，还可以赚点零花钱🤔于是乎，突发奇想，既然网上的那些平台资源大多都是从互联网上爬的，很有可能存在版权问题，违法的事情咱肯定不能做，所以SHTShop源码商城郑重承诺： 本站所有资源全部经过原作者许可，或是可商用开源项目，又或是博主自己写的项目，所以各位可以放心来到小站光顾一下，并且商品都是良心价哦，拿去练手绝对没问题😁">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic.imgdb.cn/item/651929b6c458853aefa19c08.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/65191be5c458853aef9d8e92.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/65191cc3c458853aef9db17f.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/65191d31c458853aef9dc384.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/65191d99c458853aef9dd322.jpg">
+<meta property="og:image" content="https://www.tawk.to/wp-content/uploads/2020/12/TAWK-WORDMARK-1024x269.png">
+<meta property="og:image" content="https://pic.imgdb.cn/item/65191ed1c458853aef9e8b2a.jpg">
+<meta property="article:published_time" content="2023-10-01T06:51:20.000Z">
+<meta property="article:modified_time" content="2023-10-01T06:38:58.851Z">
+<meta property="article:author" content="Allensht">
+<meta property="article:tag" content="源码商城">
+<meta property="article:tag" content="SHTShop">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic.imgdb.cn/item/651929b6c458853aefa19c08.jpg">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="https://pic.imgdb.cn/item/65178840c458853aef354ab3.png" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://pic.imgdb.cn/item/65178840c458853aef354ab3.png">
+    <meta name="theme-color" content="#71d5fe">
+    <link rel="shortcut icon" href="https://pic.imgdb.cn/item/65178840c458853aef354ab3.png">
+    <!--- Page Info-->
+    
+    <title>
+        
+            SHTShop！假期三天自己做了一个源码商城 -
+        
+        SHTBlog
+    </title>
+    
+<link rel="stylesheet" href="/SHTBlog/css/style.css">
+
+    <link rel="stylesheet" href="//evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/fonts/fonts.css">
+    <link rel="stylesheet" href="//evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/fonts/Satoshi/satoshi.css">
+    <link rel="stylesheet" href="//evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/fonts/Chillax/chillax.css">
+    <!--- Font Part-->
+    
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    
+    
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+
+    <!--- Inject Part-->
+    
+        
+            
+    
+            
+    
+            
+                
+                    <script data-swup-reload-script>var _hmt = _hmt || [];(function() {  var hm = document.createElement("script");  hm.src = "https://hm.baidu.com/hm.js?97a1b65d8405d6eb5bafe8dceeb786ba";  var s = document.getElementsByTagName("script")[0];   s.parentNode.insertBefore(hm, s);})();</script>
+                
+    
+    <script id="hexo-configurations">
+    let Global = window.Global || {};
+    Global.hexo_config = {"hostname":"allensht.github.io","root":"/SHTBlog/","language":"zh-CN","path":"search.xml"};
+    Global.theme_config = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":true,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":"Source Code Pro","url":"https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600;700&display=swap"}},"toc":{"enable":true,"max_depth":3,"number":true,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"recommendation":{"enable":true,"title":"相关阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#71d5fe","secondary":null},"global":{"fonts":{"chinese":{"enable":true,"family":"Noto Sans SC","url":"https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap"},"english":{"enable":true,"family":"Noto Sans SC","url":"https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap"}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":true,"percentage":false},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"https://pic.imgdb.cn/item/65157022c458853aefc0cf37.jpg","dark":"https://pic.imgdb.cn/item/64fc2960661c6c8e54f0ed89.jpg"},"title":"Allensht","subtitle":{"text":["Loading..."],"hitokoto":{"enable":true,"api":"https://v1.hitokoto.cn/?c=k"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#252323","dark":"#f5f5f5"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":true,"family":"Noto Sans SC","url":"https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap"},"social_links":{"enable":true,"links":{"github":"https://github.com/Allensht","instagram":null,"zhihu":null,"twitter":null,"email":"swhatw442@qq.com","fas fa-address-card":"https://allensht.github.io/","fa-solid fa-blog":"https://blog.csdn.net/2202_75780138","fa-brands fa-blogger":"https://juejin.cn/user/3837757520886381"},"qrs":null}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":"把回忆拼好给你","artist":"王贰浪","url":"http://m801.music.126.net/20230731224908/c54bb2d6d6dba44ed2618cb953030d89/jdymusic/obj/wo3DlMOGwrbDjj7DisKw/14096427464/0fb1/c0e5/09c8/a05030257801c32066a5e9ba7b49f438.mp3","cover":"http://p1.music.126.net/CBx2K_jEN3SNWwYztagPPw==/109951164485969446.jpg?param=130y130"}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.3.0","navbar":{"auto_hide":true,"color":{"left":"#252323","right":"#f5f5f5","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"分类":{"path":"/categories","icon":"fa-regular fa-folder"},"标签":{"path":"/tags","icon":"fa-regular fa-tags"},"归档":{"path":"/archives","icon":"fa-regular fa-archive"},"关于":{"icon":"fa-regular fa-user","submenus":{"关于站长":"https://allensht.github.io/","Github":"https://github.com/Allensht","CSDN":"https://blog.csdn.net/2202_75780138?spm=1000.2115.3001.5343","掘金":"https://juejin.cn/user/3837757520886381","赞助":"./zz/index.html"}}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":"本站欢迎您~","links":{"关于站长":{"path":"https://allensht.github.io/","icon":"fas fa-address-card"},"归档":{"path":"/archives","icon":"fa-regular fa-archive"},"标签":{"path":"/tags","icon":"fa-regular fa-tags"},"分类":{"path":"/categories","icon":"fa-regular fa-folder"},"赞助":{"path":"./zz/index.html","icon":"fa-solid fa-dollar-sign"}}},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2023/7/31 00:00:00"};
+    Global.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    Global.data_config = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    <link rel="stylesheet" href="//evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/fontawesome/fontawesome.min.css">
+    <link rel="stylesheet" href="//evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/fontawesome/brands.min.css">
+    <link rel="stylesheet" href="//evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/fontawesome/solid.min.css">
+    <link rel="stylesheet" href="//evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/fontawesome/regular.min.css">
+    
+    
+    
+        <link rel="stylesheet" href="//evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/fontawesome/duotone.min.css">
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="swup-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container" id="swup">
+    
+
+    
+
+    <div class="main-content-container">
+        
+
+        <div class="main-content-header">
+            <header class="navbar-container">
+    
+    <div class="navbar-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="https://pic.imgdb.cn/item/65178840c458853aef354ab3.png">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                SHTBlog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/SHTBlog/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        首页
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/SHTBlog/categories"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-folder"></i>
+                                        
+                                        分类
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/SHTBlog/tags"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-tags"></i>
+                                        
+                                        标签
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/SHTBlog/archives"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-archive"></i>
+                                        
+                                        归档
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown" 
+                                    href="#" onClick="return false;">
+                                    
+                                        
+                                            <i class="fa-regular fa-user"></i>
+                                        
+                                        关于&nbsp;<i class="fa-solid fa-chevron-down"></i>
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                    
+                                        <li>
+                                        <a href="https://allensht.github.io/">关于站长
+                                        </a>
+                                        </li>
+                                    
+                                        <li>
+                                        <a target="_blank" rel="noopener" href="https://github.com/Allensht">GITHUB
+                                        </a>
+                                        </li>
+                                    
+                                        <li>
+                                        <a target="_blank" rel="noopener" href="https://blog.csdn.net/2202_75780138?spm=1000.2115.3001.5343">CSDN
+                                        </a>
+                                        </li>
+                                    
+                                        <li>
+                                        <a target="_blank" rel="noopener" href="https://juejin.cn/user/3837757520886381">掘金
+                                        </a>
+                                        </li>
+                                    
+                                        <li>
+                                        <a href="/SHTBlog/./zz/">赞助
+                                        </a>
+                                        </li>
+                                    
+                                    </ul>
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="navbar-drawer">
+        <ul class="drawer-navbar-list">
+            
+                
+                    <li class="drawer-navbar-item flex-center">
+                        <a class="" 
+                        href="/SHTBlog/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                首页
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item flex-center">
+                        <a class="" 
+                        href="/SHTBlog/categories"  >
+                             
+                                
+                                    <i class="fa-regular fa-folder"></i>
+                                
+                                分类
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item flex-center">
+                        <a class="" 
+                        href="/SHTBlog/tags"  >
+                             
+                                
+                                    <i class="fa-regular fa-tags"></i>
+                                
+                                标签
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item flex-center">
+                        <a class="" 
+                        href="/SHTBlog/archives"  >
+                             
+                                
+                                    <i class="fa-regular fa-archive"></i>
+                                
+                                归档
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item flex-center">
+                        <a class="has-dropdown" 
+                        href="#" onClick="return false;">
+                            
+                                
+                                    <i class="fa-regular fa-user"></i>
+                                
+                                关于&nbsp;<i class="fa-solid fa-chevron-down"></i>
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                              
+                        
+                            <li class="dropdown-item flex-center">
+                                <a class="dropdown-item" href="https://allensht.github.io/">关于站长</a>
+                            </li>
+                        
+                            <li class="dropdown-item flex-center">
+                                <a class="dropdown-item" target="_blank" rel="noopener" href="https://github.com/Allensht">GITHUB</a>
+                            </li>
+                        
+                            <li class="dropdown-item flex-center">
+                                <a class="dropdown-item" target="_blank" rel="noopener" href="https://blog.csdn.net/2202_75780138?spm=1000.2115.3001.5343">CSDN</a>
+                            </li>
+                        
+                            <li class="dropdown-item flex-center">
+                                <a class="dropdown-item" target="_blank" rel="noopener" href="https://juejin.cn/user/3837757520886381">掘金</a>
+                            </li>
+                        
+                            <li class="dropdown-item flex-center">
+                                <a class="dropdown-item" href="/SHTBlog/./zz/">赞助</a>
+                            </li>
+                        
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            
+                
+                
+                <img src="https://pic.imgdb.cn/item/6519169ac458853aef9b4b45.jpg" alt="SHTShop！假期三天自己做了一个源码商城" />
+                
+                <h1 class="article-title-cover">SHTShop！假期三天自己做了一个源码商城</h1>
+            
+            </div>
+            
+                    
+        
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="https://pic.imgdb.cn/item/65178840c458853aef354ab3.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Allensht</span>
+                        
+                            <span class="author-label">Lv1</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2023-10-01 14:51:20</span>
+        <span class="mobile">2023-10-01 14:51:20</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2023-10-01 14:38:58</span>
+            <span class="mobile">2023-10-01 14:38:58</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/SHTBlog/categories/%E6%BA%90%E7%A0%81%E5%95%86%E5%9F%8E/">源码商城</a>&nbsp;
+                        </li>
+                    
+                    
+                
+                    
+                        
+                            <li>></li>
+                        
+                        <li>
+                            <a href="/SHTBlog/categories/%E6%BA%90%E7%A0%81%E5%95%86%E5%9F%8E/SHTShop/">SHTShop</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/SHTBlog/tags/%E6%BA%90%E7%A0%81%E5%95%86%E5%9F%8E/">源码商城</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/SHTBlog/tags/SHTShop/">SHTShop</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>931 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>3 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
+<p>十天假期无聊？那就搞个项目玩玩，左思右想，看到网上很多源码商城项目不错，还可以赚点零花钱🤔于是乎，突发奇想，既然网上的那些平台资源大多都是从互联网上爬的，很有可能存在版权问题，违法的事情咱肯定不能做，所以SHTShop源码商城郑重承诺：</p>
+<p>本站所有资源全部经过原作者许可，或是可商用开源项目，又或是博主自己写的项目，所以各位可以放心来到小站光顾一下，并且商品都是良心价哦，拿去练手绝对没问题😁</p>
+<p><a href="https://allensht.github.io/SHTShop/">SHTShop源码商城</a>是个人开发者Allensht运营的资源分享站，于2023年9月23日正式上线，主要分享技术性资源，目的旨在方便大家学习交流，提升效率，不断进步</p>
+</blockquote>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://pic.imgdb.cn/item/651929b6c458853aefa19c08.jpg"
+                      alt="加载失败，请及时联系我处理！"
+                ></p>
+<h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="技术选型"><a href="#技术选型" class="headerlink" title="技术选型"></a>技术选型</h2><p>这个项目是和几个朋友一起做的，资金也比较充裕，所以最初是想下点血本买个服务器，买个域名，买个WordPress主题来完成这个项目的。结果经过前期不断调研，发现服务器、域名之类的弄起来也挺麻烦的，要各种配置，国内的话还要备案，国外的话访问速度肯定受影响。其实最是商品的收费功能怎么做？一来一去时间浪费很多，所以<strong>节省成本，取其精华</strong>🧐</p>
+<ul>
+<li>使用GitHub Pages来托管项目</li>
+<li>域名后期再买</li>
+<li>使用Hexo博客框架以文章的形式发布商品</li>
+<li>支付页面自己写，采用先付款，再审核，后发货的形式，虽然有点慢，但是<strong>节省成本</strong></li>
+<li>使用tawk.to作为客服系统，因为<strong>免费且可用</strong></li>
+</ul>
+<h2 id="建站过程"><a href="#建站过程" class="headerlink" title="建站过程"></a>建站过程</h2><p>之前就用Github Pages托管了<a href="https://allensht.github.io/SHTBlog/">个人博客</a>，所以避免文件太多导致冲突问题，采取同一个仓库下一个目录一个项目的形式来协调各个项目之间正常工作<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://pic.imgdb.cn/item/65191be5c458853aef9d8e92.jpg"
+                      alt="加载失败，请及时联系我处理！"
+                ></p>
+<p>Hexo的话选择的是Butterfly主题，这个主题作者精心维护很长时间了，网上的各种教程也很多，所以出问题也可以快速找到解决办法的<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://pic.imgdb.cn/item/65191cc3c458853aef9db17f.jpg"
+                      alt="加载失败，请及时联系我处理！"
+                ><br>支付页面最开始想找一个提供支付接口的代理平台实现的，因为本人是<strong>酷爱学习</strong>的学生一枚，申请支付接口也不太现实，经过反复决策，还是麻烦一点，笨方法实现，<strong>节省成本</strong><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://pic.imgdb.cn/item/65191d31c458853aef9dc384.jpg"
+                      alt="加载失败，请及时联系我处理！"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://pic.imgdb.cn/item/65191d99c458853aef9dd322.jpg"
+                      alt="加载失败，请及时联系我处理！"
+                ><br>客服系统网上也很多的，大多数只提供免费试用，但偶然间发现了tawk.to这个平台。凭的就是一个<strong>良心</strong>，完全免费，且后台支持中文繁体方便使用，只需要将提供的代码inject到项目中就可以了，速度极快不受地区影响。这个平台还有移动端APP和桌面端应用消息提醒，也可以自动发送提醒到邮箱<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://www.tawk.to/wp-content/uploads/2020/12/TAWK-WORDMARK-1024x269.png"
+                      alt="加载失败，请及时联系我处理！"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://pic.imgdb.cn/item/65191ed1c458853aef9e8b2a.jpg"
+                      alt="加载失败，请及时联系我处理！"
+                ></p>
+<h2 id="心得体会"><a href="#心得体会" class="headerlink" title="心得体会"></a>心得体会</h2><p>三天下来，反反复复问题确实也出现了很多，但是各位要记住，当我们产生问题时，一定要去运用搜索引擎，在当今这个信息量爆炸的网络时代，搜索引擎已经成为我们获取新知、不断革新、自我进步的重要途径了。</p>
+<h1 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h1><p>以上就是SHTShop源码商城项目的一些记录，喜欢的朋友们来捧个场吧，如果你也想做一个类似的项目，根据这篇文章应该可以得到一些启发，有问题可以私信我哦~</p>
+<h1 id="CSDN已同步发布"><a href="#CSDN已同步发布" class="headerlink" title="CSDN已同步发布"></a><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/2202_75780138/article/details/133466303" >CSDN已同步发布 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h1><h1 id="掘金已同步发布"><a href="#掘金已同步发布" class="headerlink" title="掘金已同步发布"></a><a class="link"   target="_blank" rel="noopener" href="https://juejin.cn/post/7283813865720643623" >掘金已同步发布 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></h1>
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>标题:</strong> SHTShop！假期三天自己做了一个源码商城</li>
+        <li><strong>作者:</strong> Allensht</li>
+        <li><strong>创建于:</strong> 2023-10-01 14:51:20</li>
+        
+            <li>
+                <strong>更新于:</strong> 2023-10-01 14:38:58
+            </li>
+        
+        <li>
+            <strong>链接:</strong> https://allensht.github.io/dc68/
+        </li>
+        <li>
+            <strong>版权声明:</strong> 本文章采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a> 进行许可。
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/SHTBlog/tags/%E6%BA%90%E7%A0%81%E5%95%86%E5%9F%8E/">#源码商城</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/SHTBlog/tags/SHTShop/">#SHTShop</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+  <div class="recommended-article">
+   <div class="recommended-desktop">
+    <div class="recommended-article-header">
+     <i aria-hidden="true"></i><span>相关阅读</span>
+    </div>
+    <div class="recommended-article-group"><a class="recommended-article-item" href="/SHTBlog/bf56/" title="hexo+Github部署教程（防踩坑）" rel="bookmark">
+  <img src="https://s2.ax1x.com/2020/01/20/1Phcbq.png" alt="hexo+Github部署教程（防踩坑）">
+  <span class="title">hexo+Github部署教程（防踩坑）</span>
+</a><a class="recommended-article-item" href="/SHTBlog/805d/" title="hexo添加自定义页面" rel="bookmark">
+  <img src="https://tse2-mm.cn.bing.net/th/id/OIP-C.KDmaLuTWB86uxBfIQGGaRQHaEK?pid=ImgDet&rs=1" alt="hexo添加自定义页面">
+  <span class="title">hexo添加自定义页面</span>
+</a><a class="recommended-article-item" href="/SHTBlog/883/" title="原生Js基于WebRTC实现Web端屏幕录制、回放、下载功能" rel="bookmark">
+  <img src="https://pic.imgdb.cn/item/651cc402c458853aef7f5f47.jpg" alt="原生Js基于WebRTC实现Web端屏幕录制、回放、下载功能">
+  <span class="title">原生Js基于WebRTC实现Web端屏幕录制、回放、下载功能</span>
+</a></div>
+   </div>
+   <div class="recommended-mobile">
+   <div class="recommended-article-header">
+     <i aria-hidden="true"></i><span>相关阅读</span>
+   </div>
+   <div class="recommended-article-group"><a class="recommended-article-item" href="/SHTBlog/bf56/" title="hexo+Github部署教程（防踩坑）" rel="bookmark">
+  <img src="https://s2.ax1x.com/2020/01/20/1Phcbq.png" alt="hexo+Github部署教程（防踩坑）">
+  <span class="title">hexo+Github部署教程（防踩坑）</span>
+</a><a class="recommended-article-item" href="/SHTBlog/805d/" title="hexo添加自定义页面" rel="bookmark">
+  <img src="https://tse2-mm.cn.bing.net/th/id/OIP-C.KDmaLuTWB86uxBfIQGGaRQHaEK?pid=ImgDet&rs=1" alt="hexo添加自定义页面">
+  <span class="title">hexo添加自定义页面</span>
+</a></div>
+   </div>
+  </div>
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                        rel="prev"
+                        href="/SHTBlog/883/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">原生Js基于WebRTC实现Web端屏幕录制、回放、下载功能</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                        rel="next"
+                        href="/SHTBlog/e36b/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">CMD找不到Python?</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container">
+                <div class="comments-container pjax">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fa-solid fa-comments"></i>&nbsp;评论
+    </div>
+    
+
+        
+            
+    <div id="gitalk-container"></div>
+    <script data-swup-reload-script
+            src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+    <script data-swup-reload-script>
+
+        function loadGitalk() {
+            let __gitalk__pathname = decodeURI(location.pathname);
+            const __gitalk__pathnameLength = __gitalk__pathname.length;
+            const __gitalk__pathnameMaxLength = 50;
+            if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
+                __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
+            }
+
+            try {
+                Gitalk && new Gitalk({
+                    clientID: 'b07d7da9dab800edee74',
+                    clientSecret: '9a8638492f8bfb6523a38d278e3fe4e4feb099fb',
+                    repo: 'gitalk',
+                    owner: 'Allensht',
+                    admin: ['Allensht'],
+                    id: __gitalk__pathname,
+                    language: 'zh-CN'
+                }).render('gitalk-container');
+
+            } catch (e) {
+                window.Gitalk = null;
+            }
+        }
+
+        if ('true') {
+            const loadGitalkTimeout = setTimeout(() => {
+                loadGitalk();
+                clearTimeout(loadGitalkTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadGitalk);
+        }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">此页目录</div>
+        <div class="page-title">SHTShop！假期三天自己做了一个源码商城</div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AD%A3%E6%96%87"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B"><span class="nav-number">2.1.</span> <span class="nav-text">技术选型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BB%BA%E7%AB%99%E8%BF%87%E7%A8%8B"><span class="nav-number">2.2.</span> <span class="nav-text">建站过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A"><span class="nav-number">2.3.</span> <span class="nav-text">心得体会</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%93%E5%B0%BE"><span class="nav-number">3.</span> <span class="nav-text">结尾</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSDN%E5%B7%B2%E5%90%8C%E6%AD%A5%E5%8F%91%E5%B8%83"><span class="nav-number">4.</span> <span class="nav-text">CSDN已同步发布 </span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8E%98%E9%87%91%E5%B7%B2%E5%90%8C%E6%AD%A5%E5%8F%91%E5%B8%83"><span class="nav-number">5.</span> <span class="nav-text">掘金已同步发布 </span></a></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+            
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info">
+            &copy;
+            
+              <span>2023</span>
+              -
+            
+            2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Allensht</a>
+        </div>
+        
+            <script data-swup-reload-script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv" class="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv" class="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv" class="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            <span class="powered-by-container">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" href="https://hexo.io">Hexo</a> 驱动</span>
+                <br>
+            <span class="theme-version-container">主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.3.0</a></span>
+        </div>
+        
+        
+        
+            <div class="customize-info info-item">All rights reserved.</div>
+        
+        
+        
+            
+                
+        
+                
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-expand-width flex-center">
+            <i class="fa-regular fa-expand"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex-center">
+                <i class="fa-regular fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fa-solid fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa-solid fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+
+</main>
+
+<script src="https://evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/js/libs/Swup.min.js"></script><script src="https://evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/js/libs/SwupSlideTheme.min.js"></script><script src="https://evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/js/libs/SwupScriptsPlugin.min.js"></script><script src="https://evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/js/libs/SwupProgressPlugin.min.js"></script><script src="https://evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/js/libs/SwupScrollPlugin.min.js"></script>
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+        ],
+        containers: ["#swup"],
+    });
+
+    swup.on("pageView", () => {
+        Global.refresh();
+    });
+
+    // if (document.readyState === "complete") {
+    //
+    // } else {
+    //     document.addEventListener("DOMContentLoaded", () => init());
+    // }
+</script>
+
+
+
+
+<script src="https://evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/js/utils.js"></script><script src="https://evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/js/main.js"></script><script src="https://evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/js/layouts/navbarShrink.js"></script><script src="https://evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/js/tools/scrollTopBottom.js"></script><script src="https://evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/js/tools/lightDarkSwitch.js"></script><script src="https://evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/js/layouts/categoryList.js"></script>
+
+
+    <script src="https://evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/js/tools/localSearch.js"></script>
+
+
+
+    <script src="https://evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/js/tools/codeBlock.js"></script>
+
+
+
+    <script src="https://evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/js/layouts/lazyload.js"></script>
+
+
+
+
+
+  <script src="https://evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/js/libs/Typed.min.js"></script>
+  <script src="https://evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/js/plugins/typed.js"></script>
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        <script src="https://evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/js/tools/tocToggle.js"></script><script src="https://evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/js/layouts/toc.js"></script><script src="https://evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/js/libs/anime.min.js"></script><script src="https://evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/js/plugins/tabs.js"></script>
+    
+</div>
+
+
+</body>
+</html>
