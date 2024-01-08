@@ -1,5 +1,6 @@
 # Everybody大家好！这里是Allensht小站的代码仓库🫡
 # 此仓库用来部署个人站点
+# [首页](https://pic.imgdb.cn/item/659bd95a871b83018adee95e.jpg)
 # [SHTRec](https://allensht.github.io/SHTRec/)
 ![SHTRec](https://pic.imgdb.cn/item/651cc402c458853aef7f5f47.jpg)
 # [SHTBlog](https://allensht.github.io/SHTBlog/)
