@@ -9,10 +9,12 @@
     <!-- preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
+
     
         
-            <link rel="preconnect" href="https://npm.elemecdn.com" crossorigin>
+        
+        
+            <link rel="preconnect" href="https://cdn.staticfile.org" crossorigin>
         
     
     <!--- Seo Part-->
@@ -32,7 +34,7 @@
 <meta property="og:image" content="https://pic.imgdb.cn/item/651d5847c458853aefa75674.jpg">
 <meta property="og:image" content="https://pic.imgdb.cn/item/651d5871c458853aefa7647d.jpg">
 <meta property="article:published_time" content="2023-10-04T12:22:20.000Z">
-<meta property="article:modified_time" content="2023-10-04T10:28:57.666Z">
+<meta property="article:modified_time" content="2023-10-04T10:29:24.370Z">
 <meta property="article:author" content="Allensht">
 <meta property="article:tag" content="Js">
 <meta property="article:tag" content="WebRTC">
@@ -54,12 +56,178 @@
         
         SHTBlog
     </title>
+
+    
+<link rel="stylesheet" href="/SHTBlog/fonts/Chillax/chillax.css">
+
+
+    
+        <style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    
+<script src="/SHTBlog/js/libs/anime.min.js"></script>
+
+    <h1 class="ml13">
+        SHTBlog
+    </h1>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
+        // Split text into words
+        var words = textWrapper.textContent.trim().split(' ');
+
+        // Clear the existing content
+        textWrapper.innerHTML = '';
+
+        // Wrap each word and its letters in spans
+        words.forEach(function(word) {
+            var wordSpan = document.createElement('span');
+            wordSpan.classList.add('word');
+            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
+            textWrapper.appendChild(wordSpan);
+            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
+        });
+
+
+        anime.timeline({loop: true})
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [100,0],
+                translateZ: 0,
+                opacity: [0,1],
+                easing: "easeOutExpo",
+                duration: 1400,
+                delay: (el, i) => 300 + 30 * i
+            }).add({
+            targets: '.ml13 .letter',
+            translateY: [0,-100],
+            opacity: [1,0],
+            easing: "easeInExpo",
+            duration: 1200,
+            delay: (el, i) => 100 + 30 * i
+        });
+
+        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
+
+        // If the theme status is not found in local storage, check the preferred color scheme
+        if (themeStatus === undefined || themeStatus === null) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeStatus = 'dark';
+            } else {
+                themeStatus = 'light';
+            }
+        }
+
+        // Now you can use the themeStatus variable in your code
+        if (themeStatus) {
+            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
+            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
+        } else {
+            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
+            document.documentElement.style.setProperty('--preloader-text-color', '#000');
+        }
+
+        window.addEventListener('load', function () {
+            hidePreloaderAfterTimeout(1000); // Hide after 1000 milliseconds once the window has loaded
+        });
+
+        // Backup failsafe: Hide preloader after a maximum of 5000 milliseconds, regardless of the window load event
+        hidePreloaderAfterTimeout(5000);
+
+        function hidePreloaderAfterTimeout(delay) {
+            setTimeout(function () {
+                var preloader = document.querySelector('.preloader');
+                preloader.style.opacity = '0';
+                setTimeout(function () {
+                    preloader.style.display = 'none';
+                }, 200);
+            }, delay);
+        }
+    </script>
+</div>
+    
+
     
 <link rel="stylesheet" href="/SHTBlog/css/style.css">
 
-    <link rel="stylesheet" href="//evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/fonts/fonts.css">
-    <link rel="stylesheet" href="//evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/fonts/Satoshi/satoshi.css">
-    <link rel="stylesheet" href="//evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/fonts/Chillax/chillax.css">
+
+    
+        
+<link rel="stylesheet" href="/SHTBlog/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/SHTBlog/fonts/fonts.css">
+
+    
+<link rel="stylesheet" href="/SHTBlog/fonts/Satoshi/satoshi.css">
+
     <!--- Font Part-->
     
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
@@ -81,26 +249,35 @@
     
             
                 
-                    <script data-swup-reload-script>var _hmt = _hmt || [];(function() {  var hm = document.createElement("script");  hm.src = "https://hm.baidu.com/hm.js?97a1b65d8405d6eb5bafe8dceeb786ba";  var s = document.getElementsByTagName("script")[0];   s.parentNode.insertBefore(hm, s);})();</script>
+                    <script data-swup-reload-script type="text/javascript">(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "kp6t06khku");</script>
                 
     
     <script id="hexo-configurations">
-    let Global = window.Global || {};
-    Global.hexo_config = {"hostname":"allensht.github.io","root":"/SHTBlog/","language":"zh-CN","path":"search.xml"};
-    Global.theme_config = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":true,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":"Source Code Pro","url":"https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600;700&display=swap"}},"toc":{"enable":true,"max_depth":3,"number":true,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"recommendation":{"enable":true,"title":"相关阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#71d5fe","secondary":null},"global":{"fonts":{"chinese":{"enable":true,"family":"Noto Sans SC","url":"https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap"},"english":{"enable":true,"family":"Noto Sans SC","url":"https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap"}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":true,"percentage":false},"website_counter":{"url":"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"https://pic.imgdb.cn/item/65157022c458853aefc0cf37.jpg","dark":"https://pic.imgdb.cn/item/64fc2960661c6c8e54f0ed89.jpg"},"title":"Allensht","subtitle":{"text":["Loading..."],"hitokoto":{"enable":true,"api":"https://v1.hitokoto.cn/?c=k"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#252323","dark":"#f5f5f5"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":true,"family":"Noto Sans SC","url":"https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap"},"social_links":{"enable":true,"links":{"github":"https://github.com/Allensht","instagram":null,"zhihu":null,"twitter":null,"email":"swhatw442@qq.com","fas fa-address-card":"https://allensht.github.io/","fa-solid fa-blog":"https://blog.csdn.net/2202_75780138","fa-brands fa-blogger":"https://juejin.cn/user/3837757520886381"},"qrs":null}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":"把回忆拼好给你","artist":"王贰浪","url":"http://m801.music.126.net/20230731224908/c54bb2d6d6dba44ed2618cb953030d89/jdymusic/obj/wo3DlMOGwrbDjj7DisKw/14096427464/0fb1/c0e5/09c8/a05030257801c32066a5e9ba7b49f438.mp3","cover":"http://p1.music.126.net/CBx2K_jEN3SNWwYztagPPw==/109951164485969446.jpg?param=130y130"}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.3.0","navbar":{"auto_hide":true,"color":{"left":"#252323","right":"#f5f5f5","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"分类":{"path":"/categories","icon":"fa-regular fa-folder"},"标签":{"path":"/tags","icon":"fa-regular fa-tags"},"归档":{"path":"/archives","icon":"fa-regular fa-archive"},"关于":{"icon":"fa-regular fa-user","submenus":{"关于站长":"https://allensht.github.io/","Github":"https://github.com/Allensht","CSDN":"https://blog.csdn.net/2202_75780138?spm=1000.2115.3001.5343","掘金":"https://juejin.cn/user/3837757520886381","赞助":"./zz/index.html"}}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":"本站欢迎您~","links":{"关于站长":{"path":"https://allensht.github.io/","icon":"fas fa-address-card"},"归档":{"path":"/archives","icon":"fa-regular fa-archive"},"标签":{"path":"/tags","icon":"fa-regular fa-tags"},"分类":{"path":"/categories","icon":"fa-regular fa-folder"},"赞助":{"path":"./zz/index.html","icon":"fa-solid fa-dollar-sign"}}},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2023/7/31 00:00:00"};
-    Global.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
-    Global.data_config = {"masonry":false};
+    window.config = {"hostname":"allensht.github.io","root":"/SHTBlog/","language":"zh-CN","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left"},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":true,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":"Source Code Pro","url":"https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600;700&display=swap"}},"toc":{"enable":true,"max_depth":3,"number":true,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#71d5fe","secondary":null},"global":{"fonts":{"chinese":{"enable":true,"family":"Noto Sans SC","url":"https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap"},"english":{"enable":true,"family":"Noto Sans SC","url":"https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap"}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":true,"percentage":false},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"https://pic.imgdb.cn/item/65157022c458853aefc0cf37.jpg","dark":"https://pic.imgdb.cn/item/64fc2960661c6c8e54f0ed89.jpg"},"title":"Allensht","subtitle":{"text":["Loading..."],"hitokoto":{"enable":true,"api":"https://v1.hitokoto.cn/?c=k"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#252323","dark":"#f5f5f5"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":true,"family":"Noto Sans SC","url":"https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap"},"social_links":{"enable":true,"links":{"github":"https://github.com/Allensht","instagram":null,"zhihu":null,"twitter":null,"email":"swhatw442@qq.com","fas fa-address-card":"https://allensht.github.io/","fa-solid fa-blog":"https://blog.csdn.net/2202_75780138","fa-brands fa-blogger":"https://juejin.cn/user/3837757520886381"},"qrs":null}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":"把回忆拼好给你","artist":"王贰浪","url":"http://m801.music.126.net/20230731224908/c54bb2d6d6dba44ed2618cb953030d89/jdymusic/obj/wo3DlMOGwrbDjj7DisKw/14096427464/0fb1/c0e5/09c8/a05030257801c32066a5e9ba7b49f438.mp3","cover":"http://p1.music.126.net/CBx2K_jEN3SNWwYztagPPw==/109951164485969446.jpg?param=130y130"}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.6.0","navbar":{"auto_hide":true,"color":{"left":"#252323","right":"#f5f5f5","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"分类":{"path":"/categories","icon":"fa-regular fa-folder"},"标签":{"path":"/tags","icon":"fa-regular fa-tags"},"归档":{"path":"/archives","icon":"fa-regular fa-archive"},"关于":{"icon":"fa-regular fa-user","submenus":{"关于站长":"https://allensht.github.io/","Github":"https://github.com/Allensht","CSDN":"https://blog.csdn.net/2202_75780138?spm=1000.2115.3001.5343","掘金":"https://juejin.cn/user/3837757520886381","赞助":"https://allensht.github.io/home/zz"}}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":"本站欢迎您~","links":{"关于站长":{"path":"https://allensht.github.io/","icon":"fas fa-address-card"},"归档":{"path":"/archives","icon":"fa-regular fa-archive"},"标签":{"path":"/tags","icon":"fa-regular fa-tags"},"分类":{"path":"/categories","icon":"fa-regular fa-folder"},"赞助":{"path":"https://allensht.github.io/home/zz","icon":"fa-solid fa-dollar-sign"}}},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2023/7/31 00:00:00"};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    window.data = {"masonry":false};
   </script>
     
     <!--- Fontawesome Part-->
-    <link rel="stylesheet" href="//evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/fontawesome/fontawesome.min.css">
-    <link rel="stylesheet" href="//evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/fontawesome/brands.min.css">
-    <link rel="stylesheet" href="//evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/fontawesome/solid.min.css">
-    <link rel="stylesheet" href="//evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/fontawesome/regular.min.css">
+    
+<link rel="stylesheet" href="/SHTBlog/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/SHTBlog/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/SHTBlog/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/SHTBlog/fontawesome/regular.min.css">
+
     
     
     
-        <link rel="stylesheet" href="//evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/fontawesome/duotone.min.css">
+        
+<link rel="stylesheet" href="/SHTBlog/fontawesome/duotone.min.css">
+
     
     
 <meta name="generator" content="Hexo 6.3.0"></head>
@@ -114,32 +291,31 @@
 
     
         <span class="pjax-progress-bar"></span>
-        <span class="swup-progress-icon">
-            <i class="fa-solid fa-circle-notch fa-spin"></i>
-        </span>
+<!--        <span class="swup-progress-icon">-->
+<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+<!--        </span>-->
     
 </div>
 
 
 <main class="page-container" id="swup">
-    
 
     
 
     <div class="main-content-container">
-        
+
 
         <div class="main-content-header">
             <header class="navbar-container">
-    
+
     <div class="navbar-content">
         <div class="left">
             
-                <a class="logo-image" href="/">
+                <a class="logo-image" href="/SHTBlog/">
                     <img src="https://pic.imgdb.cn/item/65178840c458853aef354ab3.png">
                 </a>
             
-            <a class="logo-title" href="/">
+            <a class="logo-title" href="/SHTBlog/">
                 
                 SHTBlog
                 
@@ -152,110 +328,120 @@
                 <ul class="navbar-list">
                     
                         
+                            
+
                             <li class="navbar-item">
                                 <!-- Menu -->
-                                <a class="" 
-                                    href="/SHTBlog/"  >
-                                    
-                                        
-                                            <i class="fa-regular fa-house"></i>
-                                        
-                                        首页
+                                <a class=""
+                                   href="/SHTBlog/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    首页
                                     
                                 </a>
+
                                 <!-- Submenu -->
                                 
                             </li>
                     
                         
+                            
+
                             <li class="navbar-item">
                                 <!-- Menu -->
-                                <a class="" 
-                                    href="/SHTBlog/categories"  >
-                                    
-                                        
-                                            <i class="fa-regular fa-folder"></i>
-                                        
-                                        分类
+                                <a class=""
+                                   href="/SHTBlog/categories"
+                                        >
+                                    <i class="fa-regular fa-folder fa-fw"></i>
+                                    分类
                                     
                                 </a>
+
                                 <!-- Submenu -->
                                 
                             </li>
                     
                         
+                            
+
                             <li class="navbar-item">
                                 <!-- Menu -->
-                                <a class="" 
-                                    href="/SHTBlog/tags"  >
-                                    
-                                        
-                                            <i class="fa-regular fa-tags"></i>
-                                        
-                                        标签
+                                <a class=""
+                                   href="/SHTBlog/tags"
+                                        >
+                                    <i class="fa-regular fa-tags fa-fw"></i>
+                                    标签
                                     
                                 </a>
+
                                 <!-- Submenu -->
                                 
                             </li>
                     
                         
+                            
+
                             <li class="navbar-item">
                                 <!-- Menu -->
-                                <a class="" 
-                                    href="/SHTBlog/archives"  >
-                                    
-                                        
-                                            <i class="fa-regular fa-archive"></i>
-                                        
-                                        归档
+                                <a class=""
+                                   href="/SHTBlog/archives"
+                                        >
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    归档
                                     
                                 </a>
+
                                 <!-- Submenu -->
                                 
                             </li>
                     
                         
+                            
+
                             <li class="navbar-item">
                                 <!-- Menu -->
-                                <a class="has-dropdown" 
-                                    href="#" onClick="return false;">
-                                    
-                                        
-                                            <i class="fa-regular fa-user"></i>
-                                        
-                                        关于&nbsp;<i class="fa-solid fa-chevron-down"></i>
-                                    
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-regular fa-user fa-fw"></i>
+                                    关于
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
                                 </a>
+
                                 <!-- Submenu -->
                                 
                                     <ul class="sub-menu">
-                                    
-                                        <li>
-                                        <a href="https://allensht.github.io/">关于站长
-                                        </a>
-                                        </li>
-                                    
-                                        <li>
-                                        <a target="_blank" rel="noopener" href="https://github.com/Allensht">GITHUB
-                                        </a>
-                                        </li>
-                                    
-                                        <li>
-                                        <a target="_blank" rel="noopener" href="https://blog.csdn.net/2202_75780138?spm=1000.2115.3001.5343">CSDN
-                                        </a>
-                                        </li>
-                                    
-                                        <li>
-                                        <a target="_blank" rel="noopener" href="https://juejin.cn/user/3837757520886381">掘金
-                                        </a>
-                                        </li>
-                                    
-                                        <li>
-                                        <a href="/SHTBlog/./zz/">赞助
-                                        </a>
-                                        </li>
-                                    
+                                        
+                                            <li>
+                                                <a href="https://allensht.github.io/">
+                                                    关于站长
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://github.com/Allensht">
+                                                    GITHUB
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://blog.csdn.net/2202_75780138?spm=1000.2115.3001.5343">
+                                                    CSDN
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://juejin.cn/user/3837757520886381">
+                                                    掘金
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="https://allensht.github.io/home/zz">
+                                                    赞助
+                                                </a>
+                                            </li>
+                                        
                                     </ul>
                                 
                             </li>
@@ -270,7 +456,8 @@
             <!-- Mobile -->
             <div class="mobile">
                 
-                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></div>
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
                 
                 <div class="icon-item navbar-bar">
                     <div class="navbar-bar-middle"></div>
@@ -280,108 +467,154 @@
     </div>
 
     <!-- Mobile drawer -->
-    <div class="navbar-drawer">
-        <ul class="drawer-navbar-list">
+    <div class="navbar-drawer h-screen w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
             
                 
-                    <li class="drawer-navbar-item flex-center">
-                        <a class="" 
-                        href="/SHTBlog/"  >
-                             
-                                
-                                    <i class="fa-regular fa-house"></i>
-                                
-                                首页
-                            
-                        </a>
-                    </li>
-                    <!-- Submenu -->
                     
-            
-                
-                    <li class="drawer-navbar-item flex-center">
-                        <a class="" 
-                        href="/SHTBlog/categories"  >
-                             
-                                
-                                    <i class="fa-regular fa-folder"></i>
-                                
-                                分类
-                            
-                        </a>
-                    </li>
-                    <!-- Submenu -->
-                    
-            
-                
-                    <li class="drawer-navbar-item flex-center">
-                        <a class="" 
-                        href="/SHTBlog/tags"  >
-                             
-                                
-                                    <i class="fa-regular fa-tags"></i>
-                                
-                                标签
-                            
-                        </a>
-                    </li>
-                    <!-- Submenu -->
-                    
-            
-                
-                    <li class="drawer-navbar-item flex-center">
-                        <a class="" 
-                        href="/SHTBlog/archives"  >
-                             
-                                
-                                    <i class="fa-regular fa-archive"></i>
-                                
-                                归档
-                            
-                        </a>
-                    </li>
-                    <!-- Submenu -->
-                    
-            
-                
-                    <li class="drawer-navbar-item flex-center">
-                        <a class="has-dropdown" 
-                        href="#" onClick="return false;">
-                            
-                                
-                                    <i class="fa-regular fa-user"></i>
-                                
-                                关于&nbsp;<i class="fa-solid fa-chevron-down"></i>
-                            
-                        </a>
-                    </li>
-                    <!-- Submenu -->
-                              
-                        
-                            <li class="dropdown-item flex-center">
-                                <a class="dropdown-item" href="https://allensht.github.io/">关于站长</a>
-                            </li>
-                        
-                            <li class="dropdown-item flex-center">
-                                <a class="dropdown-item" target="_blank" rel="noopener" href="https://github.com/Allensht">GITHUB</a>
-                            </li>
-                        
-                            <li class="dropdown-item flex-center">
-                                <a class="dropdown-item" target="_blank" rel="noopener" href="https://blog.csdn.net/2202_75780138?spm=1000.2115.3001.5343">CSDN</a>
-                            </li>
-                        
-                            <li class="dropdown-item flex-center">
-                                <a class="dropdown-item" target="_blank" rel="noopener" href="https://juejin.cn/user/3837757520886381">掘金</a>
-                            </li>
-                        
-                            <li class="dropdown-item flex-center">
-                                <a class="dropdown-item" href="/SHTBlog/./zz/">赞助</a>
-                            </li>
-                        
-                    
-            
 
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/SHTBlog/"
+                        >
+                            <span>
+                                首页
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/SHTBlog/categories"
+                        >
+                            <span>
+                                分类
+                            </span>
+                            
+                                <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/SHTBlog/tags"
+                        >
+                            <span>
+                                标签
+                            </span>
+                            
+                                <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/SHTBlog/archives"
+                        >
+                            <span>
+                                归档
+                            </span>
+                            
+                                <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-关于"
+                        >
+                            <span>
+                                关于
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-关于">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="https://allensht.github.io/">关于站长</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://github.com/Allensht">GITHUB</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://blog.csdn.net/2202_75780138?spm=1000.2115.3001.5343">CSDN</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://juejin.cn/user/3837757520886381">掘金</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="https://allensht.github.io/home/zz">赞助</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
         </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/SHTBlog/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">15</div>
+        <div class="label text-third-text-color text-sm">标签</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/SHTBlog/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">15</div>
+        <div class="label text-third-text-color text-sm">分类</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/SHTBlog/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">7</div>
+        <div class="label text-third-text-color text-sm">文章</div>
+    </a>
+</div>
     </div>
 
     <div class="window-mask"></div>
@@ -398,31 +631,31 @@
             <div class="main-content">
 
                 
-                    <div class="post-page-container">
+                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
     <div class="article-content-container">
 
-        <div class="article-title">
+        <div class="article-title relative w-full">
             
                 
                 
-                <img src="https://pic.imgdb.cn/item/651cc402c458853aef7f5f47.jpg" alt="原生Js基于WebRTC实现Web端屏幕录制、回放、下载功能" />
+                <img src="https://pic.imgdb.cn/item/651cc402c458853aef7f5f47.jpg" alt="原生Js基于WebRTC实现Web端屏幕录制、回放、下载功能" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75"/>
                 
-                <h1 class="article-title-cover">原生Js基于WebRTC实现Web端屏幕录制、回放、下载功能</h1>
+                <div class="w-full flex items-center absolute bottom-0 justify-start">
+                    <h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-bold backdrop-blur-lg rounded-xl border border-border-color ">原生Js基于WebRTC实现Web端屏幕录制、回放、下载功能</h1>
+                </div>
             
             </div>
-            
-                    
+
         
-        
-            <div class="article-header">
-                <div class="avatar">
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
                     <img src="https://pic.imgdb.cn/item/65178840c458853aef354ab3.png">
                 </div>
-                <div class="info">
-                    <div class="author">
-                        <span class="name">Allensht</span>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">Allensht</span>
                         
-                            <span class="author-label">Lv1</span>
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv1</span>
                         
                     </div>
                     <div class="meta-info">
@@ -436,8 +669,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-10-04 18:28:57</span>
-            <span class="mobile">2023-10-04 18:28:57</span>
+            <span class="desktop">2023-10-04 18:29:24</span>
+            <span class="mobile">2023-10-04 18:29:24</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -523,7 +756,10 @@
             </div>
         
 
-        <div class="article-content markdown-body">
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
             <h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><blockquote>
 <p>一切的一切都开始于那个夜黑风高的夜晚……<br>那晚，我急需要一款录屏软件，找来找去，可是：<br>付费去广告、付费去水印、付费高清、付费下载😅……<br> 等等，突然我灵光乍现，我还有一条路：<br> <strong>自己做！</strong><br> 于是<strong>原生Js基于WebRTC实现的Web端实时录屏功能</strong>就出来了！文末附开源地址😎<br> 先来试用一下成品吧→<a href="https://allensht.github.io/SHTRec/">SHTRec</a>←移动端暂不支持哦  </p>
 </blockquote>
@@ -590,22 +826,31 @@
         </div>
 
         
-            <div class="post-copyright-info">
+            <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
                 <div class="article-copyright-info-container">
     <ul>
         <li><strong>标题:</strong> 原生Js基于WebRTC实现Web端屏幕录制、回放、下载功能</li>
         <li><strong>作者:</strong> Allensht</li>
-        <li><strong>创建于:</strong> 2023-10-04 20:22:20</li>
+        <li><strong>创建于
+                :</strong> 2023-10-04 20:22:20</li>
         
             <li>
-                <strong>更新于:</strong> 2023-10-04 18:28:57
+                <strong>更新于
+                    :</strong> 2023-10-04 18:29:24
             </li>
         
         <li>
             <strong>链接:</strong> https://allensht.github.io/883/
         </li>
         <li>
-            <strong>版权声明:</strong> 本文章采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a> 进行许可。
+            <strong>
+                版权声明:
+            </strong>
+            
+
+            
+                本文章采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a> 进行许可。
+            
         </li>
     </ul>
 </div>
@@ -614,17 +859,17 @@
         
 
         
-            <ul class="post-tags-box">
+            <ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
                 
-                    <li class="tag-item">
+                    <li class="tag-item mx-0.5">
                         <a href="/SHTBlog/tags/Js/">#Js</a>&nbsp;
                     </li>
                 
-                    <li class="tag-item">
+                    <li class="tag-item mx-0.5">
                         <a href="/SHTBlog/tags/WebRTC/">#WebRTC</a>&nbsp;
                     </li>
                 
-                    <li class="tag-item">
+                    <li class="tag-item mx-0.5">
                         <a href="/SHTBlog/tags/%E5%9C%A8%E7%BA%BF%E5%BD%95%E5%B1%8F/">#在线录屏</a>&nbsp;
                     </li>
                 
@@ -632,50 +877,21 @@
         
 
         
-  <div class="recommended-article">
-   <div class="recommended-desktop">
-    <div class="recommended-article-header">
-     <i aria-hidden="true"></i><span>相关阅读</span>
-    </div>
-    <div class="recommended-article-group"><a class="recommended-article-item" href="/SHTBlog/bf56/" title="hexo+Github部署教程（防踩坑）" rel="bookmark">
-  <img src="https://s2.ax1x.com/2020/01/20/1Phcbq.png" alt="hexo+Github部署教程（防踩坑）">
-  <span class="title">hexo+Github部署教程（防踩坑）</span>
-</a><a class="recommended-article-item" href="/SHTBlog/dc68/" title="SHTShop！假期三天自己做了一个源码商城" rel="bookmark">
-  <img src="https://pic.imgdb.cn/item/6519169ac458853aef9b4b45.jpg" alt="SHTShop！假期三天自己做了一个源码商城">
-  <span class="title">SHTShop！假期三天自己做了一个源码商城</span>
-</a><a class="recommended-article-item" href="/SHTBlog/805d/" title="hexo添加自定义页面" rel="bookmark">
-  <img src="https://tse2-mm.cn.bing.net/th/id/OIP-C.KDmaLuTWB86uxBfIQGGaRQHaEK?pid=ImgDet&rs=1" alt="hexo添加自定义页面">
-  <span class="title">hexo添加自定义页面</span>
-</a></div>
-   </div>
-   <div class="recommended-mobile">
-   <div class="recommended-article-header">
-     <i aria-hidden="true"></i><span>相关阅读</span>
-   </div>
-   <div class="recommended-article-group"><a class="recommended-article-item" href="/SHTBlog/bf56/" title="hexo+Github部署教程（防踩坑）" rel="bookmark">
-  <img src="https://s2.ax1x.com/2020/01/20/1Phcbq.png" alt="hexo+Github部署教程（防踩坑）">
-  <span class="title">hexo+Github部署教程（防踩坑）</span>
-</a><a class="recommended-article-item" href="/SHTBlog/dc68/" title="SHTShop！假期三天自己做了一个源码商城" rel="bookmark">
-  <img src="https://pic.imgdb.cn/item/6519169ac458853aef9b4b45.jpg" alt="SHTShop！假期三天自己做了一个源码商城">
-  <span class="title">SHTShop！假期三天自己做了一个源码商城</span>
-</a></div>
-   </div>
-  </div>
 
         
-            <div class="article-nav">
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
                 
                 
-                    <div class="article-next">
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
                         <a class="next"
                         rel="next"
                         href="/SHTBlog/dc68/"
                         >
-                            <span class="title flex-center">
+                            <span class="title flex justify-center items-center">
                                 <span class="post-nav-title-item">SHTShop！假期三天自己做了一个源码商城</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
-                            <span class="right arrow-icon flex-center">
+                            <span class="right arrow-icon flex justify-center items-center">
                                 <i class="fa-solid fa-chevron-right"></i>
                             </span>
                         </a>
@@ -686,11 +902,11 @@
 
 
         
-            <div class="comment-container">
-                <div class="comments-container pjax">
-    <div id="comment-anchor"></div>
-    <div class="comment-area-title">
-        <i class="fa-solid fa-comments"></i>&nbsp;评论
+            <div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+                <div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        评论
     </div>
     
 
@@ -698,7 +914,7 @@
             
     <div id="gitalk-container"></div>
     <script data-swup-reload-script
-            src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+            src="//cdn.staticfile.org/gitalk/1.8.0/gitalk.min.js"></script>
     <script data-swup-reload-script>
 
         function loadGitalk() {
@@ -717,7 +933,8 @@
                     owner: 'Allensht',
                     admin: ['Allensht'],
                     id: __gitalk__pathname,
-                    language: 'zh-CN'
+                    language: 'zh-CN',
+                    proxy: 'https://github.com/login/oauth/access_token'
                 }).render('gitalk-container');
 
             } catch (e) {
@@ -764,47 +981,68 @@
                 
 
             </div>
-            
+
             
 
         </div>
 
         <div class="main-content-footer">
-            <footer class="footer">
-    <div class="info-container">
-        <div class="copyright-info">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+            <div class="customize-info my-1">All rights reserved.</div>
+        
+        <div class="text-center">
             &copy;
             
               <span>2023</span>
               -
             
-            2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Allensht</a>
+            2024&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/SHTBlog/">Allensht</a>
         </div>
         
-            <script data-swup-reload-script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-            <div class="website-count info-item">
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
                 
-                    <span id="busuanzi_container_site_uv" class="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv" class="busuanzi_value_site_uv"></span>
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">访问人数</span>
+                        <span id="busuanzi_value_site_uv"></span>
                     </span>
                 
                 
-                    <span id="busuanzi_container_site_pv" class="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv" class="busuanzi_value_site_pv"></span>
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">总访问量</span>
+                        <span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
-        <div class="theme-info info-item">
-            <span class="powered-by-container">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" href="https://hexo.io">Hexo</a> 驱动</span>
-                <br>
-            <span class="theme-version-container">主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.3.0</a></span>
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.6.0</a></span>
         </div>
         
         
+            <div>
+                博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
+            </div>
         
-            <div class="customize-info info-item">All rights reserved.</div>
         
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
         
         
             
@@ -844,19 +1082,15 @@
     <div class="right-side-tools-container">
         <div class="side-tools-container">
     <ul class="hidden-tools-list">
-        <li class="right-bottom-tools tool-font-adjust-plus flex-center">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
             <i class="fa-regular fa-magnifying-glass-plus"></i>
         </li>
 
-        <li class="right-bottom-tools tool-font-adjust-minus flex-center">
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
             <i class="fa-regular fa-magnifying-glass-minus"></i>
         </li>
 
-        <li class="right-bottom-tools tool-expand-width flex-center">
-            <i class="fa-regular fa-expand"></i>
-        </li>
-
-        <li class="right-bottom-tools tool-dark-light-toggle flex-center">
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
             <i class="fa-regular fa-moon"></i>
         </li>
 
@@ -864,18 +1098,18 @@
         
 
         
-            <li class="right-bottom-tools tool-scroll-to-top flex-center">
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
                 <i class="fa-regular fa-arrow-up"></i>
             </li>
         
 
-        <li class="right-bottom-tools tool-scroll-to-bottom flex-center">
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
             <i class="fa-regular fa-arrow-down"></i>
         </li>
     </ul>
 
     <ul class="visible-tools-list">
-        <li class="right-bottom-tools toggle-tools-list flex-center">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
             <i class="fa-regular fa-cog fa-spin"></i>
         </li>
         
@@ -921,10 +1155,22 @@
 
     
 
-
 </main>
 
-<script src="https://evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/js/libs/Swup.min.js"></script><script src="https://evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/js/libs/SwupSlideTheme.min.js"></script><script src="https://evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/js/libs/SwupScriptsPlugin.min.js"></script><script src="https://evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/js/libs/SwupProgressPlugin.min.js"></script><script src="https://evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/js/libs/SwupScrollPlugin.min.js"></script>
+
+    
+<script src="/SHTBlog/js/libs/Swup.min.js"></script>
+
+<script src="/SHTBlog/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/SHTBlog/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/SHTBlog/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/SHTBlog/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/SHTBlog/js/libs/SwupPreloadPlugin.min.js"></script>
+
 <script>
     const swup = new Swup({
         plugins: [
@@ -938,43 +1184,72 @@
             new SwupSlideTheme({
                 mainElement: ".main-content-body",
             }),
+            new SwupPreloadPlugin(),
         ],
         containers: ["#swup"],
     });
-
-    swup.on("pageView", () => {
-        Global.refresh();
-    });
-
-    // if (document.readyState === "complete") {
-    //
-    // } else {
-    //     document.addEventListener("DOMContentLoaded", () => init());
-    // }
 </script>
 
 
 
 
-<script src="https://evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/js/utils.js"></script><script src="https://evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/js/main.js"></script><script src="https://evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/js/layouts/navbarShrink.js"></script><script src="https://evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/js/tools/scrollTopBottom.js"></script><script src="https://evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/js/tools/lightDarkSwitch.js"></script><script src="https://evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/js/layouts/categoryList.js"></script>
-
-
-    <script src="https://evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/js/tools/localSearch.js"></script>
 
 
 
-    <script src="https://evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/js/tools/codeBlock.js"></script>
+<script src="/SHTBlog/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/SHTBlog/js/utils.js" type="module"></script>
+
+<script src="/SHTBlog/js/main.js" type="module"></script>
+
+<script src="/SHTBlog/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/SHTBlog/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/SHTBlog/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/SHTBlog/js/layouts/categoryList.js" type="module"></script>
 
 
 
-    <script src="https://evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/js/layouts/lazyload.js"></script>
+    
+<script src="/SHTBlog/js/tools/localSearch.js" type="module"></script>
 
 
 
 
+    
+<script src="/SHTBlog/js/tools/codeBlock.js" type="module"></script>
 
-  <script src="https://evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/js/libs/Typed.min.js"></script>
-  <script src="https://evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/js/plugins/typed.js"></script>
+
+
+
+    
+<script src="/SHTBlog/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/SHTBlog/js/tools/runtime.js"></script>
+
+    
+<script src="/SHTBlog/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/SHTBlog/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/SHTBlog/js/libs/Typed.min.js"></script>
+
+  
+<script src="/SHTBlog/js/plugins/typed.js" type="module"></script>
+
+
+
 
 
 
@@ -983,7 +1258,13 @@
 
 <div class="post-scripts" data-swup-reload-script>
     
-        <script src="https://evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/js/tools/tocToggle.js"></script><script src="https://evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/js/layouts/toc.js"></script><script src="https://evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/js/libs/anime.min.js"></script><script src="https://evan.beee.top/projects/hexo-theme-redefine@2.3.0/source/js/plugins/tabs.js"></script>
+        
+<script src="/SHTBlog/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/SHTBlog/js/layouts/toc.js" type="module"></script>
+
+<script src="/SHTBlog/js/plugins/tabs.js" type="module"></script>
+
     
 </div>
 
